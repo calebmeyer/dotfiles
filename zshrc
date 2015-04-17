@@ -29,7 +29,7 @@ fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-source ~/.oh-my-zsh/aliases.zsh
+source ~/.aliases.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
