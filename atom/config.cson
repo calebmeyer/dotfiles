@@ -1,0 +1,51 @@
+"*":
+  editor:
+    invisibles: {}
+    fontFamily: "Consolas"
+    fontSize: 18
+    scrollPastEnd: true
+    preferredLineLength: 120
+  core:
+    disabledPackages: [
+      "language-mustache"
+    ]
+  "exception-reporting":
+    userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
+  welcome:
+    showOnStartup: false
+  autosave:
+    enabled: true
+  "autocomplete-ruby": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab and enter"
+    includeCompletionsFromAllBuffers: true
+    fileBlacklist: [
+      ".log"
+    ]
+  "auto-update-packages": {}
+  "filetype-color":
+    enabled: "false"
+  minimap:
+    plugins:
+      "git-diff": true
+  "merge-conflicts": {}
+  "highlight-line": {}
+  linter:
+    statusBar: "Show error of the selected line"
+    clearOnChange: true
+    lintOnChange: false
+  "jasmine-runner": {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+  "atom-jshint":
+    hintOnModify: false
+  "linter-jshint":
+    jshintExecutablePath: "/usr/local/bin/jshint"
+  jshint:
+    validateOnlyOnSave: true
+".rspec.ruby.source":
+  editor:
+    preferredLineLength: 120
+".diff.source":
+  editor:
+    preferredLineLength: 120
