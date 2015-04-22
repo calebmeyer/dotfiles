@@ -1,8 +1,8 @@
 # my aliases file
 
 # reconfiguring the shell
-alias reconfigure="subl ~/.zshrc"
-alias aliases="subl ~/.oh-my-zsh/aliases.zsh"
+alias reconfigure="atom ~/.zshrc"
+alias aliases="atom ~/.aliases.zsh"
 alias reload_aliases="source ~/.oh-my-zsh/aliases.zsh"
 alias reload_theme="rm -rf .antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-calebmeyer-SLASH-cpm-zsh-theme.git/ ; antigen theme calebmeyer/cpm-zsh-theme cpm"
 

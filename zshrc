@@ -1,13 +1,13 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/cm022291/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 DISABLE_CORRECTION="true"
 
 # User configuration
 
-export PATH="/usr/local/bin:/Users/cm022291/.bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/cm022291/.rvm/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$PATH"
 
-export GEM_HOME="/Users/cm022291/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0"
+export GEM_HOME="$HOME/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0"
 export GEM_PATH="$GEM_HOME"
 
 source $ZSH/oh-my-zsh.sh
