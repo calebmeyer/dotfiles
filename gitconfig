@@ -13,7 +13,7 @@
 	ui = auto
 [core]
 	autocrlf = input
-	editor = subl -n -w
+	editor = mvim -f
 [credential]
 	helper = osxkeychain
 [alias]

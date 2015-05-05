@@ -6,16 +6,18 @@
     scrollPastEnd: true
     preferredLineLength: 120
     showIndentGuide: true
+    lineHeight: 1.4
   core:
     disabledPackages: [
       "language-mustache"
       "linter-haml"
       "autocomplete-paths"
       "deprecation-cop"
+      "linter-foodcritic"
     ]
     themes: [
-      "isotope-ui"
-      "duotone-dark-syntax"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -25,11 +27,11 @@
     enabled: true
   "autocomplete-ruby": {}
   "autocomplete-plus":
-    confirmCompletion: "tab and enter"
     includeCompletionsFromAllBuffers: true
     fileBlacklist: [
       ".log"
     ]
+    confirmCompletion: "tab and enter"
   "auto-update-packages": {}
   "filetype-color":
     enabled: "false"
@@ -42,6 +44,9 @@
     statusBar: "Show error of the selected line"
     clearOnChange: true
     lintOnChange: false
+    ignoredLinterErrors: [
+      "foodcritic"
+    ]
   "jasmine-runner": {}
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
@@ -65,7 +70,12 @@
     lowContrastTooltip: true
     customBackgroundColor: true
   Zen: {}
+  "fuzzy-finder": {}
+  "linter-foodcritic": {}
 ".rspec.ruby.source":
+  editor:
+    preferredLineLength: 120
+".chef.ruby.source":
   editor:
     preferredLineLength: 120
 ".diff.source":
