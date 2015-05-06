@@ -72,10 +72,10 @@
   Zen: {}
   "fuzzy-finder": {}
   "linter-foodcritic": {}
-".rspec.ruby.source":
+".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".chef.ruby.source":
+".rspec.ruby.source":
   editor:
     preferredLineLength: 120
 ".diff.source":

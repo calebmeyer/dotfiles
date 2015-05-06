@@ -5,12 +5,15 @@ DISABLE_CORRECTION="true"
 
 # User configuration
 
-export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$HOME/.jenv/bin:$PATH"
 
 export GEM_HOME="$HOME/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0"
 export GEM_PATH="$GEM_HOME"
 
 source $ZSH/oh-my-zsh.sh
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 export LANG=en_US.UTF-8
 
@@ -42,6 +45,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle rvm
+antigen bundle compleat
+antigen bundle z
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 # syntax highlighting color changes:
@@ -52,6 +57,17 @@ ZSH_HIGHLIGHT_STYLES[command]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[pre-command]='fg=cyan,bold,underline'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=cyan,underline'
+
+# Setup zsh-autosuggestions
+antigen bundle tarruda/zsh-autosuggestions
+
+# Enable autosuggestions automatically
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
+
+antigen bundle zsh-users/zsh-history-substring-search
 
 antigen theme calebmeyer/cpm-zsh-theme cpm
 

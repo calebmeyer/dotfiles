@@ -2,9 +2,6 @@ set nocompatible              " be iMproved
 set encoding=utf-8
 set t_Co=256
 
-set shell=/bin/bash
-let $VIMRUNTIME = '/usr/local/Cellar/macvim/7.4-74/MacVim.app/Contents/Resources/vim/runtime'
-
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -29,7 +26,7 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'
   Plugin 'fatih/vim-go'
   Plugin 'thoughtbot/vim-rspec'
-
+  Plugin 'ntpeters/vim-better-whitespace'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -65,10 +62,6 @@ set noswapfile
 set nobackup
 set nowb
 
-set autoindent        " indent the next line to the same depth as this one
-set smartindent       " indent the next line one deeper, when appropriate
-set shiftwidth=2      " the next few lines are all to set tabs as 2 spaces, by default
-set softtabstop=2
 set tabstop=2
 set expandtab         " use spaces instead of tabs when a lot of indentation is needed
 
@@ -77,9 +70,6 @@ let mapleader = ","   " use comma as the leader character
 " Nerd Tree settings
 " use ctrl n to toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
-
-" close vim if nerd tree is the last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " .md means markdown, not modula2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
