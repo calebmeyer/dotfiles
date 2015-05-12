@@ -14,6 +14,7 @@
       "autocomplete-paths"
       "deprecation-cop"
       "linter-foodcritic"
+      "trailing-spaces"
     ]
     themes: [
       "atom-dark-ui"
@@ -72,10 +73,10 @@
   Zen: {}
   "fuzzy-finder": {}
   "linter-foodcritic": {}
-".chef.ruby.source":
+".rspec.ruby.source":
   editor:
     preferredLineLength: 120
-".rspec.ruby.source":
+".chef.ruby.source":
   editor:
     preferredLineLength: 120
 ".diff.source":

@@ -67,7 +67,12 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
+# right arrow accepts entire suggestion.
+AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+
 antigen bundle zsh-users/zsh-history-substring-search
+
+bindkey '^T' autosuggest-toggle
 
 antigen theme calebmeyer/cpm-zsh-theme cpm
 

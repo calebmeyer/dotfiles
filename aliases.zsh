@@ -22,6 +22,7 @@ alias secrets="cd ~/chef_workspace/secrets_chef"
 alias rcdash="cd ~/ruby_workspace/other_teams/rev_cycle_dashboard"
 alias storefront="cd ~/ruby_workspace/clients/storefront"
 alias theme="cd ~/personal/cpm-zsh-theme"
+alias rust_workspace="cd ~/personal/rust_workspace"
 
 # ruby aliases
 alias rs="rake site"
@@ -42,6 +43,7 @@ alias last_diff="git diff HEAD~..HEAD"
 alias diff_with_master="git diff master..HEAD"
 alias eff='eval $(thefuck $(fc -ln -1))'
 alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -k $OAUTH_KEY -s $OAUTH_SECRET -c"
+alias pickmeup="fortune | cowsay | lolcat"
 
 # general goodies
 mkcd () { mkdir $1 && cd $1; }
@@ -60,4 +62,14 @@ get_commits () {
 copy_last_commit () {
   get_commits 1 | head -2 | tail -1 | tr -d "\n" | pbcopy
   echo "Copied to clipboard"
+}
+
+code () {
+  if [[ $# = 0 ]]
+  then
+    open -a "Visual Studio Code"
+  else
+    [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+    open -a "Visual Studio Code" --args "$F"
+  fi
 }
