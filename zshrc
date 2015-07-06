@@ -33,10 +33,7 @@ fi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 source ~/.aliases.zsh
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias git="hub"
+if [ -f ~/.docker.zsh ]; then source ~/.docker.zsh; fi
 
 source ~/.dotfiles/binaries/antigen/antigen.zsh
 
@@ -58,24 +55,39 @@ ZSH_HIGHLIGHT_STYLES[pre-command]='fg=cyan,bold,underline'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=cyan,underline'
 
-# Setup zsh-autosuggestions
-antigen bundle tarruda/zsh-autosuggestions
+# vim text objects, so I can do ci" to change inside quotes
+antigen bundle hchbaw/opp.zsh opp.zsh
 
-# Enable autosuggestions automatically
-zle-line-init() {
-  zle autosuggest-start
-}
-zle -N zle-line-init
-
-# right arrow accepts entire suggestion.
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-
-antigen bundle zsh-users/zsh-history-substring-search
-
-bindkey '^T' autosuggest-toggle
+# # Setup zsh-autosuggestions
+# antigen bundle tarruda/zsh-autosuggestions
+#
+# # Enable autosuggestions automatically
+# zle-line-init() {
+#   zle autosuggest-start
+# }
+# zle -N zle-line-init
+#
+# # right arrow accepts entire suggestion.
+# AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+#
+# bindkey '^T' autosuggest-toggle
+#
+# antigen bundle zsh-users/zsh-history-substring-search
 
 antigen theme calebmeyer/cpm-zsh-theme cpm
 
 antigen apply
 
 export PATH="$HOME/.bin:$PATH"
+
+# make the terminal work like vim
+bindkey -v
+bindkey -M viins 'jj' vi-cmd-mode
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^r' history-incremental-search-backward
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1

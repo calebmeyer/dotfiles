@@ -1,24 +1,20 @@
 "*":
   editor:
     invisibles: {}
-    fontFamily: "Consolas"
-    fontSize: 18
     scrollPastEnd: true
     preferredLineLength: 120
     showIndentGuide: true
-    lineHeight: 1.4
+    fontFamily: "Input Mono Narrow"
+    fontSize: 15
   core:
     disabledPackages: [
       "language-mustache"
       "linter-haml"
-      "autocomplete-paths"
       "deprecation-cop"
+      "overrides"
+      "autocomplete-paths"
+      "minimap-autohide"
       "linter-foodcritic"
-      "trailing-spaces"
-    ]
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -39,6 +35,7 @@
   minimap:
     plugins:
       "git-diff": true
+      "minimap-autohide": true
   "merge-conflicts": {}
   "highlight-line": {}
   linter:
@@ -73,12 +70,22 @@
   Zen: {}
   "fuzzy-finder": {}
   "linter-foodcritic": {}
-".rspec.ruby.source":
-  editor:
-    preferredLineLength: 120
+  "git-diff": {}
+  tabs: {}
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+    startInInsertMode: true
+  "one-dark-ui": {}
+  "omni-ruler":
+    columns: [
+      "80"
+      "120"
+    ]
+  "open-recent":
+    maxRecentFiles: 10
+  "easy-motion": {}
+  emmet: {}
 ".chef.ruby.source":
-  editor:
-    preferredLineLength: 120
-".diff.source":
   editor:
     preferredLineLength: 120

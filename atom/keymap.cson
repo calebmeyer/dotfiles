@@ -24,7 +24,7 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 '.editor.vim-mode.insert-mode':
-  'j': 'insert-incomplete-keybinding'
+  'j': 'custom:wait-key-press'
 
 '.vim-mode.insert-mode:not(.mini)':
   'j j': 'vim-mode:activate-command-mode'
@@ -32,3 +32,8 @@
 '.editor.vim-mode.command-mode':
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
+  'J': 'easy-motion:start'
+
+'.platform-darwin':
+  'cmd-k right': 'pane:split-right-moving-current-tab'
+  'ctrl-n': 'tree-view:toggle-focus'

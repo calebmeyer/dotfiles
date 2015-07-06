@@ -23,10 +23,12 @@ alias rcdash="cd ~/ruby_workspace/other_teams/rev_cycle_dashboard"
 alias storefront="cd ~/ruby_workspace/clients/storefront"
 alias theme="cd ~/personal/cpm-zsh-theme"
 alias rust_workspace="cd ~/personal/rust_workspace"
+alias bletchley="cd ~/chef_workspace/bletchley"
 
 # ruby aliases
 alias rs="rake site"
 alias rr="bundle exec rspec spec"
+alias rit="ruby spec/integration/integration.rb"
 alias bi="bundle install"
 alias bu="bundle update"
 alias asset_clear="rake assets:clobber && rake tmp:clear"
@@ -34,15 +36,19 @@ alias open_lint="open target/site/Lint-Results/lint-results.html"
 alias coverage="open target/site/Code-Coverage/index.html"
 alias site_index="open target/site/index.html"
 
+# git aliases
+alias master="git checkout master"
+alias last_diff="git diff HEAD~..HEAD"
+alias diff_with_master="git diff master..HEAD"
+alias reset="git reset --hard"
+
 # Other
 alias emacs="emacs --daemon"
 alias em="emacsclient -t"
 alias kill_emacs="emacsclient -e '(kill-emacs)'"
 alias ew="/Applications/Emacs.app/Contents/MacOS/Emacs" # emacs window
-alias last_diff="git diff HEAD~..HEAD"
-alias diff_with_master="git diff master..HEAD"
 alias eff='eval $(thefuck $(fc -ln -1))'
-alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -k $OAUTH_KEY -s $OAUTH_SECRET -c"
+alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -c"
 alias pickmeup="fortune | cowsay | lolcat"
 
 # general goodies

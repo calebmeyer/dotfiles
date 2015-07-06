@@ -17,6 +17,17 @@
 atom-text-editor {
 }
 
+atom-text-editor .gutter .line-number.git-line-modified,
+atom-text-editor::shadow .gutter .line-number.git-line-modified {
+  border-left: 2px solid #00c4ff;
+}
+
+.minimap {
+  .git-line-modified{
+    background: fadeOut(#00c4ff, 50%);
+  }
+}
+
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
 atom-text-editor::shadow .cursor {
