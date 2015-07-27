@@ -1,1 +1,1 @@
-init.el
+./init.el
