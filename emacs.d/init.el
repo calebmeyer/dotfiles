@@ -1,1 +1,1 @@
-./init.el
+/Users/cm022291/.emacs.d/init.el
