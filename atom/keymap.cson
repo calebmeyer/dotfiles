@@ -27,7 +27,7 @@
   'j': 'custom:wait-key-press'
 
 '.vim-mode.insert-mode:not(.mini)':
-  'j j': 'vim-mode:activate-command-mode'
+  'j j': 'vim-mode:activate-normal-mode'
 
 '.editor.vim-mode.command-mode':
   'tab': 'pane:show-next-item'

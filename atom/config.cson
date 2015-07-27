@@ -4,8 +4,8 @@
     scrollPastEnd: true
     preferredLineLength: 120
     showIndentGuide: true
-    fontFamily: "Input Mono Narrow"
-    fontSize: 15
+    fontFamily: "Consolas"
+    fontSize: 16
   core:
     disabledPackages: [
       "language-mustache"
@@ -13,7 +13,6 @@
       "deprecation-cop"
       "overrides"
       "autocomplete-paths"
-      "minimap-autohide"
       "linter-foodcritic"
     ]
   "exception-reporting":
@@ -75,7 +74,6 @@
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
-    startInInsertMode: true
   "one-dark-ui": {}
   "omni-ruler":
     columns: [
