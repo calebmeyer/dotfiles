@@ -15,6 +15,10 @@
       "autocomplete-paths"
       "linter-foodcritic"
     ]
+    themes: [
+      "one-dark-ui"
+      "photon-syntax"
+    ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
   welcome:
@@ -44,6 +48,7 @@
     ignoredLinterErrors: [
       "foodcritic"
     ]
+    lintOnFly: false
   "jasmine-runner": {}
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
@@ -85,5 +90,8 @@
   "easy-motion": {}
   emmet: {}
 ".chef.ruby.source":
+  editor:
+    preferredLineLength: 120
+".gitignore.source":
   editor:
     preferredLineLength: 120

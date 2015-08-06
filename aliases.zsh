@@ -44,10 +44,8 @@ alias reset="git reset --hard"
 alias clc="copy_last_commit"
 
 # Other
-alias emacs="emacs --daemon"
-alias em="emacsclient -t"
-alias kill_emacs="emacsclient -e '(kill-emacs)'"
-alias ew="/Applications/Emacs.app/Contents/MacOS/Emacs" # emacs window
+alias se="/Applications/Emacs.app/Contents/MacOS/Emacs" # emacs window
+alias spacemacs="se"
 alias eff='eval $(thefuck $(fc -ln -1))'
 alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -c"
 alias pickmeup="fortune | cowsay | lolcat"
@@ -57,7 +55,7 @@ mkcd () { mkdir $1 && cd $1; }
 
 get_commits () {
   i=1
-  url="`git config --get remote.origin.url | sed 's/\.git//'`/commit"
+  url="`git config --get remote.origin.url | sed 's/\.git//' | sed 's/:/\//' | sed 's/git@/https:\/\//'`/commit"
   git log --pretty=oneline -$1 | while read line; do
     commit="$url/`echo $line | sed 's/^\([0-9a-f]*\) .*$/\1/'`"
     message="`echo $line | sed 's/^[0-9a-f]* \(.*\)$/\1/'`"
