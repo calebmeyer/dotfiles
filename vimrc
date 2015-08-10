@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved
 set encoding=utf-8
-set t_Co=256
 
 filetype off
 
@@ -27,6 +26,7 @@ call vundle#begin()
   Plugin 'fatih/vim-go'
   Plugin 'thoughtbot/vim-rspec'
   Plugin 'ntpeters/vim-better-whitespace'
+  Plugin 'andrwb/vim-lapis256'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,6 +45,12 @@ filetype plugin indent on    " required
 
 " Line numbers
 set number
+
+" Syntax Highlighting
+syntax on
+set t_Co=256
+set background=dark
+colorscheme lapis256
 
 " Set the rulers at 80 characters and 120 characters.
 set cc=80,120
