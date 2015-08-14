@@ -21,6 +21,7 @@
      better-defaults
      emacs-lisp
      git
+     haml
      markdown
      ;; org
      python

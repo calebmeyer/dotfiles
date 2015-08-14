@@ -27,6 +27,7 @@ call vundle#begin()
   Plugin 'thoughtbot/vim-rspec'
   Plugin 'ntpeters/vim-better-whitespace'
   Plugin 'andrwb/vim-lapis256'
+  Plugin 'ConradIrwin/vim-bracketed-paste'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,9 +40,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-" use jj to exit insert mode
-:imap jj <Esc>
 
 " Line numbers
 set number
@@ -68,21 +66,45 @@ set noswapfile
 set nobackup
 set nowb
 
-set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
 set expandtab         " use spaces instead of tabs when a lot of indentation is needed
 
-let mapleader = ","   " use comma as the leader character
+set incsearch
+
+" Make backspace work in mac
+set backspace=indent,eol,start
+
+" .md means markdown, not modula2
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
 
 " Nerd Tree settings
 " use ctrl n to toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
-" .md means markdown, not modula2
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+" use jj to exit insert mode
+:imap jj <Esc>
 
 " Buffer switching with tab
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+
+" fold and unfold in normal mode with space. Fold in visual mode with space
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+" ; works just as well as : for normal mode! Saves hitting shift all the time
+nnoremap ; :
 
 " Ctrl + P doesn't search in these places
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -96,9 +118,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
-" fold and unfold in normal mode with space. Fold in visual mode with space
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+let mapleader = ","   " use comma as the leader character
 
 " fugitive shortcuts
 noremap <leader>gs :Gstatus<cr>
@@ -109,10 +129,26 @@ noremap <leader>gd :Gdiff<cr>
 noremap <leader>gb :Gblame<cr>
 noremap <leader>gp :Gpush<cr>
 
-
 " settings for rspec
 let g:rspec_runner = "os_x_iterm"
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rc :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
 map <Leader>rr :call RunAllSpecs()<CR>
+map <Leader>rit :! bundle exec ruby spec/integration/integration.rb<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e ~/.vimrc<CR>
+nmap <silent> <leader>sv :so ~/.vimrc<CR>
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif

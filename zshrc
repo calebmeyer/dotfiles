@@ -1,6 +1,11 @@
+# This file will be loaded for interactive shells. For commands which are not specific to interactive shells,
+# use .zshenv instead.
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZDOTDIR=$HOME
 
+# Zsh, I know what I'm doing when I type rake, and it wasn't that I intended to type make. Same for mvim.
 DISABLE_CORRECTION="true"
 
 # User configuration
@@ -32,7 +37,6 @@ fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-source ~/.aliases.zsh
 if [ -f ~/.docker.zsh ]; then source ~/.docker.zsh; fi
 
 source ~/.dotfiles/binaries/antigen/antigen.zsh
@@ -77,8 +81,6 @@ antigen bundle hchbaw/opp.zsh opp.zsh
 antigen theme calebmeyer/cpm-zsh-theme cpm
 
 antigen apply
-
-export PATH="$HOME/.bin:$PATH"
 
 # make the terminal work like vim
 bindkey -v
