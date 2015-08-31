@@ -18,3 +18,16 @@ atom.commands.add 'atom-text-editor', 'custom:wait-key-press', (e)->
 
 # fix path issues for CLI binaries like jshint
 process.env.PATH = ["/usr/local/bin", process.env.PATH].join(":")
+
+atom.commands.add 'atom-text-editor', 'editor:toggle-current-row-folding': (event) ->
+    editor = @getModel()
+    bufferRow = editor.bufferPositionForScreenPosition(editor.getCursorScreenPosition()).row
+    if editor.isFoldedAtBufferRow(bufferRow)
+      editor.unfoldBufferRow(bufferRow)
+    else
+      editor.foldBufferRow(bufferRow)
+
+atom.packages.onDidActivatePackage (pack) ->
+  if pack.name == 'ex-mode'
+    Ex = pack.mainModule.provideEx()
+    Ex.registerCommand 'bd', -> atom.workspace.getActivePane().destroyActiveItem()
