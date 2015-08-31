@@ -89,9 +89,16 @@
     maxRecentFiles: 10
   "easy-motion": {}
   emmet: {}
+  rspec: {}
+  term2:
+    shellArguments: "--login"
+    cursorBlink: false
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
 ".gitignore.source":
+  editor:
+    preferredLineLength: 120
+".log.source":
   editor:
     preferredLineLength: 120

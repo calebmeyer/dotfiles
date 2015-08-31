@@ -35,6 +35,7 @@ alias asset_clear="rake assets:clobber && rake tmp:clear"
 alias open_lint="open target/site/Lint-Results/lint-results.html"
 alias coverage="open target/site/Code-Coverage/index.html"
 alias site_index="open target/site/index.html"
+alias kill_rails='kill "$(lsof -i :3000 -t)"'
 
 # git aliases
 alias master="git checkout master"
