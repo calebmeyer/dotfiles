@@ -21,20 +21,13 @@
      better-defaults
      emacs-lisp
      git
-     haml
      markdown
-     ;; org
-     python
-     ruby
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     shell-scripts
-     syntax-checking
-     themes-megapack
+     org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; syntax-checking
      version-control
-     ;;vim-powerline
-     xkcd
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -73,10 +66,11 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
+   dotspacemacs-themes '(
+                         spacemacs-dark
                          solarized-light
                          solarized-dark
+                         spacemacs-light
                          leuven
                          monokai
                          zenburn)
@@ -84,11 +78,11 @@ before layers configuration."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas"
-                               :size 18
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 2.0)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -130,7 +124,7 @@ before layers configuration."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'.
@@ -161,11 +155,7 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-
-  (x-focus-frame nil)
-  (global-set-key (kbd "s-c") 'kill-ring-save)
-  (global-set-key (kbd "s-v") 'kill-ring-yank-pointer)
-)
+  )
 
 (defun dotspacemacs/config ()
   "Configuration function.
@@ -175,22 +165,3 @@ layers configuration."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ahs-case-fold-search nil)
- '(ahs-default-range (quote ahs-range-whole-buffer))
- '(ahs-idle-interval 0.25)
- '(ahs-idle-timer 0 t)
- '(ahs-inhibit-face-list nil)
- '(ring-bell-function (quote ignore) t)
- '(vc-follow-symlinks t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
