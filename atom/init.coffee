@@ -19,6 +19,7 @@ atom.commands.add 'atom-text-editor', 'custom:wait-key-press', (e)->
 # fix path issues for CLI binaries like jshint
 process.env.PATH = ["/usr/local/bin", process.env.PATH].join(":")
 
+# toggle the folding state of the row under the cursor
 atom.commands.add 'atom-text-editor', 'editor:toggle-current-row-folding': (event) ->
     editor = @getModel()
     bufferRow = editor.bufferPositionForScreenPosition(editor.getCursorScreenPosition()).row
@@ -27,7 +28,9 @@ atom.commands.add 'atom-text-editor', 'editor:toggle-current-row-folding': (even
     else
       editor.foldBufferRow(bufferRow)
 
+# Ex mode extensions
 atom.packages.onDidActivatePackage (pack) ->
   if pack.name == 'ex-mode'
     Ex = pack.mainModule.provideEx()
+    # "buffer" delete (just kills the current tab)
     Ex.registerCommand 'bd', -> atom.workspace.getActivePane().destroyActiveItem()

@@ -14,6 +14,8 @@
       "overrides"
       "autocomplete-paths"
       "linter-foodcritic"
+      "linter-less"
+      "line-ending-selector"
     ]
     themes: [
       "one-dark-ui"
@@ -93,12 +95,21 @@
   term2:
     shellArguments: "--login"
     cursorBlink: false
+  "accents-ui":
+    accentColor:
+      red: 13
+      green: 143
+      blue: 243
+      alpha: 1
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".gitignore.source":
+".gfm.source":
   editor:
     preferredLineLength: 120
 ".log.source":
+  editor:
+    preferredLineLength: 120
+".gitignore.source":
   editor:
     preferredLineLength: 120
