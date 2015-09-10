@@ -95,12 +95,6 @@
   term2:
     shellArguments: "--login"
     cursorBlink: false
-  "accents-ui":
-    accentColor:
-      red: 13
-      green: 143
-      blue: 243
-      alpha: 1
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
