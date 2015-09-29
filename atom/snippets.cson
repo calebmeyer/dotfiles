@@ -45,3 +45,10 @@
   'Pry':
     'prefix': 'pry'
     'body': 'require "pry"; binding.pry'
+'.source.python':
+  'Interact':
+    'prefix': 'interact'
+    'body': 'import code; code.interact(local=locals())'
+  'Pry':
+    'prefix': 'pry'
+    'body': 'from IPython import embed; embed()'

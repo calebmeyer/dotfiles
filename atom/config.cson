@@ -18,7 +18,7 @@
       "line-ending-selector"
     ]
     themes: [
-      "one-dark-ui"
+      "accents-ui"
       "photon-syntax"
     ]
   "exception-reporting":
@@ -41,6 +41,8 @@
     plugins:
       "git-diff": true
       "minimap-autohide": true
+      "find-and-replace": true
+      codeglance: true
   "merge-conflicts": {}
   "highlight-line": {}
   linter:
@@ -95,6 +97,15 @@
   term2:
     shellArguments: "--login"
     cursorBlink: false
+  "accents-ui":
+    hexColor: "#1e91f0"
+    accentColor:
+      red: 30
+      green: 145
+      blue: 240
+      alpha: 1
+  "minimap-codeglance":
+    numberOfLines: 9
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120

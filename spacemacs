@@ -161,6 +161,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (setq linum-format "%d  ")
+  (setq-default evil-escape-key-sequence "jj")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

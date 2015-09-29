@@ -64,6 +64,9 @@ call vundle#begin()
 
   " <leader> c to comment or uncomment the current line/selection
   Plugin 'scrooloose/nerdcommenter'
+
+  " Rainbow parentheses
+  Plugin 'luochen1990/rainbow'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -149,6 +152,9 @@ map <leader>nt :edit .<cr>
 " comments always leave a space after the comment symbol
 " (e.g. '# comment' or '// comment' instead of '#comment' or '//comment')
 let g:NERDSpaceDelims = 1
+
+" Always have Rainbow Parens enabled
+let g:rainbow_active = 1
 
 " use jj to exit insert mode
 :imap jj <Esc>
