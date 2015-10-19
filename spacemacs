@@ -179,7 +179,7 @@ layers configuration."
   (setq linum-format "%4d")
   (setq-default evil-escape-key-sequence "jj")
   (setq-default evil-escape-delay 0.5)
-  (global-set-key (kbd "C-p") 'helm-projectile)
+  (setq diff-hl-side "left")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -198,5 +198,5 @@ layers configuration."
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(font-lock-comment-face ((t (:foreground "DarkSlateGray4"))))
+ '(font-lock-comment-face ((t (:foreground "SteelBlue4" :background nil))))
  '(highlight-indentation-face ((t (:background "gray21")))))
