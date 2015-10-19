@@ -19,7 +19,7 @@
     ]
     themes: [
       "accents-ui"
-      "photon-syntax"
+      "naturevulcano-dark-syntax"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -98,11 +98,11 @@
     shellArguments: "--login"
     cursorBlink: false
   "accents-ui":
-    hexColor: "#1e91f0"
+    hexColor: "#c36e00"
     accentColor:
-      red: 30
-      green: 145
-      blue: 240
+      red: 195
+      green: 110
+      blue: 0
       alpha: 1
   "minimap-codeglance":
     numberOfLines: 9

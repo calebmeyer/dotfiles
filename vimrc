@@ -67,6 +67,9 @@ call vundle#begin()
 
   " Rainbow parentheses
   Plugin 'luochen1990/rainbow'
+
+  " Filetype icons
+  Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -129,6 +132,8 @@ set backspace=indent,eol,start
 " Folding settings
 set nofoldenable " turn it back on with zi
 set foldmethod=indent
+
+set encoding=utf-8
 
 " .md means markdown, not modula2
 autocmd BufNewFile,BufRead *.md set filetype=markdown

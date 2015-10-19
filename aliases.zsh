@@ -24,11 +24,13 @@ alias sf="cd ~/ruby_workspace/clients/storefront"
 alias theme="cd ~/personal/cpm-zsh-theme"
 alias rust_workspace="cd ~/personal/rust_workspace"
 alias bletchley="cd ~/chef_workspace/bletchley"
+alias cmd="cd ~/ruby_workspace/other_teams/command_center"
 
 # ruby aliases
 alias rs="rake site"
 alias rr="bundle exec rspec spec"
 alias rit="ruby spec/integration/integration.rb"
+alias rake_clean_db="rake db:drop db:create db:migrate db:reset"
 alias bi="bundle install"
 alias bu="bundle update"
 alias asset_clear="rake assets:clobber && rake tmp:clear"
