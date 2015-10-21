@@ -102,7 +102,7 @@ values."
                          zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
-   ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
+   ;; Default font. `powerline-scale' allows you to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 15
@@ -193,10 +193,20 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (setq linum-format "%4d")
+  ;; Evil related
   (setq-default evil-escape-key-sequence "jj")
   (setq-default evil-escape-delay 0.5)
+
+  ;; show git gutter on left
   (setq diff-hl-side "left")
+
+  ;; Add ruler
+  (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-fill-column-indicator-on)))
+  (set-fill-column 120)
+
+  ;; line numbers related
+  (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-line-numbers-on)))
+  (setq linum-format "%4d")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
