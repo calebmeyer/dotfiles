@@ -200,13 +200,18 @@ layers configuration."
   ;; show git gutter on left
   (setq diff-hl-side "left")
 
-  ;; Add ruler
-  (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-fill-column-indicator-on)))
-  (set-fill-column 120)
-
+  ;; Add ruler at 120 columns
+  (add-hook 'prog-mode-hook (lambda ()
+                              (spacemacs/toggle-fill-column-indicator-on)
+                              (set-fill-column 120)))
+  
   ;; line numbers related
   (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-line-numbers-on)))
   (setq linum-format "%4d")
+
+  ;; fonts til everything gets fixed
+  (set-face-attribute 'default nil :family "Source Code Pro")
+  (set-face-attribute 'default nil :height 165)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
