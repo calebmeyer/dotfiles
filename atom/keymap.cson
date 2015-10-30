@@ -34,6 +34,7 @@
   ', r f': 'rspec:run' # run the current file
   ', r c': 'rspec:run-for-line' # run the current spec
   'space': 'editor:toggle-current-row-folding'
+  ';': 'ex-mode:open'
 
 '.platform-darwin':
   'cmd-k right': 'pane:split-right-moving-current-tab'

@@ -9,6 +9,7 @@
 	default = current
 [github]
 	user = username
+	password = Function37
 [color]
 	ui = auto
 [core]

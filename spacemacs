@@ -25,7 +25,9 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     clojure
      (colors :variables colors-enable-rainbow-identifiers nil)
+     dash
      django
      emacs-lisp
      erc
@@ -35,6 +37,7 @@ values."
      markdown
      org
      osx
+     prodigy
      python
      ruby
      ruby-on-rails
@@ -53,7 +56,8 @@ values."
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages '(haml-mode
-                                      yaml-mode)
+                                      yaml-mode
+                                      jira-markup-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -108,7 +112,7 @@ values."
                                :size 15
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -194,7 +198,7 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   ;; Evil related
-  (setq-default evil-escape-key-sequence "jj")
+  (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.5)
 
   ;; show git gutter on left
@@ -204,7 +208,12 @@ layers configuration."
   (add-hook 'prog-mode-hook (lambda ()
                               (spacemacs/toggle-fill-column-indicator-on)
                               (set-fill-column 120)))
-  
+
+  ;; Ruby related
+  (setq ruby-excluded-packages '(flycheck))
+  (add-hook 'ruby-mode-hook (lambda ()
+                              (flycheck-mode -1)))
+
   ;; line numbers related
   (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-line-numbers-on)))
   (setq linum-format "%4d")
@@ -212,6 +221,10 @@ layers configuration."
   ;; fonts til everything gets fixed
   (set-face-attribute 'default nil :family "Source Code Pro")
   (set-face-attribute 'default nil :height 165)
+
+  ;; Load local customizations (local to the computer)
+  (when (file-exists-p "~/local.el")
+    (load "~/local.el"))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

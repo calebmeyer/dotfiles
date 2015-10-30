@@ -7,8 +7,8 @@ alias reload_aliases="source ~/.aliases.zsh"
 alias reload_theme="rm -rf .antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-calebmeyer-SLASH-cpm-zsh-theme.git/ ; antigen theme calebmeyer/cpm-zsh-theme cpm"
 
 # go to folder aliases
-alias haberdasher="cd ~/ruby_workspace/haberdashery/haberdasher"
-alias service="cd ~/ruby_workspace/haberdashery/haberdasher_service"
+alias hd="cd ~/ruby_workspace/haberdashery/haberdasher"
+alias hds="cd ~/ruby_workspace/haberdashery/haberdasher_service"
 alias ssc="cd ~/ruby_workspace/services/semantic_service_client"
 alias ha="cd ~/ruby_workspace/haberdashery/healtheanalytics"
 alias hedw="cd ~/ruby_workspace/haberdashery/healtheedw"
@@ -25,6 +25,7 @@ alias theme="cd ~/personal/cpm-zsh-theme"
 alias rust_workspace="cd ~/personal/rust_workspace"
 alias bletchley="cd ~/chef_workspace/bletchley"
 alias cmd="cd ~/ruby_workspace/other_teams/command_center"
+alias ds="cd ~/personal/dev_setup"
 
 # ruby aliases
 alias rs="rake site"

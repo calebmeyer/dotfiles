@@ -19,7 +19,7 @@
     ]
     themes: [
       "accents-ui"
-      "naturevulcano-dark-syntax"
+      "2-dark-syntax"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -109,12 +109,12 @@
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".gfm.source":
+".gitignore.source":
   editor:
     preferredLineLength: 120
 ".log.source":
   editor:
     preferredLineLength: 120
-".gitignore.source":
+".gfm.source":
   editor:
     preferredLineLength: 120
