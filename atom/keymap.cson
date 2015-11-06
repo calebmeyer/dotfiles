@@ -26,6 +26,7 @@
 
 'atom-text-editor.vim-mode.insert-mode:not(.mini)':
   'j j': 'vim-mode:activate-normal-mode'
+  'j k': 'vim-mode:activate-normal-mode'
 
 'atom-text-editor.vim-mode.normal-mode':
   'tab': 'pane:show-next-item'
@@ -35,6 +36,7 @@
   ', r c': 'rspec:run-for-line' # run the current spec
   'space': 'editor:toggle-current-row-folding'
   ';': 'ex-mode:open'
+  'K': 'editor:newline'
 
 '.platform-darwin':
   'cmd-k right': 'pane:split-right-moving-current-tab'

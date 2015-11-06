@@ -19,7 +19,7 @@
     ]
     themes: [
       "accents-ui"
-      "2-dark-syntax"
+      "naturegreen-dark-syntax"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -76,7 +76,8 @@
     lowContrastTooltip: true
     customBackgroundColor: true
   Zen: {}
-  "fuzzy-finder": {}
+  "fuzzy-finder":
+    useAlternateScoring: true
   "linter-foodcritic": {}
   "git-diff": {}
   tabs: {}
@@ -93,16 +94,17 @@
     maxRecentFiles: 10
   "easy-motion": {}
   emmet: {}
-  rspec: {}
+  rspec:
+    command: 'bundle exec rspec'
   term2:
     shellArguments: "--login"
     cursorBlink: false
   "accents-ui":
-    hexColor: "#c36e00"
+    hexColor: "#00bd27"
     accentColor:
-      red: 195
-      green: 110
-      blue: 0
+      red: 0
+      green: 189
+      blue: 39
       alpha: 1
   "minimap-codeglance":
     numberOfLines: 9

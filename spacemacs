@@ -48,7 +48,7 @@ values."
             shell-default-position 'top)
      syntax-checking
      version-control
-     vim-powerline
+     ;; vim-powerline
      xkcd
      )
    ;; List of additional packages that will be installed without being
@@ -59,7 +59,7 @@ values."
                                       yaml-mode
                                       jira-markup-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(flycheck)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -155,7 +155,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'.
@@ -209,11 +209,6 @@ layers configuration."
                               (spacemacs/toggle-fill-column-indicator-on)
                               (set-fill-column 120)))
 
-  ;; Ruby related
-  (setq ruby-excluded-packages '(flycheck))
-  (add-hook 'ruby-mode-hook (lambda ()
-                              (flycheck-mode -1)))
-
   ;; line numbers related
   (add-hook 'prog-mode-hook (lambda () (spacemacs/toggle-line-numbers-on)))
   (setq linum-format "%4d")
@@ -221,6 +216,15 @@ layers configuration."
   ;; fonts til everything gets fixed
   (set-face-attribute 'default nil :family "Source Code Pro")
   (set-face-attribute 'default nil :height 165)
+
+  ;; Control P
+  (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
+
+  ;; Ruby related
+  ;; Flycheck doesn't work for some reason, and neither does disabling it.
+  ;; (add-hook 'ruby-mode-hook (lambda () (flycheck-mode -1)) 'append)
+  ;; (remove-hook 'ruby-mode-hook 'flycheck-mode)
+  (setq-default ruby-version-manager 'rvm)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")

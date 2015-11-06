@@ -22,11 +22,7 @@ atom-text-editor::shadow .gutter .line-number.git-line-modified {
   border-left: 2px solid #00c4ff;
 }
 
-.minimap {
-  .git-line-modified{
-    background: fadeOut(#00c4ff, 50%);
-  }
-}
+
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
@@ -34,7 +30,15 @@ atom-text-editor::shadow .cursor {
 
 }
 
+// Use blue for modified rather than orange.
+@blueish: #00c4ff;
 
-minimap-codeglance {
-  box-shadow: 0 0 20px rgba(0, 204, 255, .7);
+.status-modified, .status-modified > * {
+  color: fadeOut(@blueish, 20%) !important;
+}
+
+.minimap {
+  .git-line-modified{
+    background: fadeOut(@blueish, 50%);
+  }
 }
