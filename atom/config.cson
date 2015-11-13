@@ -16,6 +16,7 @@
       "linter-foodcritic"
       "linter-less"
       "line-ending-selector"
+      "linter"
     ]
     themes: [
       "accents-ui"
@@ -95,7 +96,7 @@
   "easy-motion": {}
   emmet: {}
   rspec:
-    command: 'bundle exec rspec'
+    command: "bundle exec rspec"
   term2:
     shellArguments: "--login"
     cursorBlink: false
@@ -108,15 +109,22 @@
       alpha: 1
   "minimap-codeglance":
     numberOfLines: 9
+  react: {}
+".js.jsx.source":
+  editor:
+    preferredLineLength: 120
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 120
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".gitignore.source":
+".gfm.source":
   editor:
     preferredLineLength: 120
 ".log.source":
   editor:
     preferredLineLength: 120
-".gfm.source":
+".gitignore.source":
   editor:
     preferredLineLength: 120

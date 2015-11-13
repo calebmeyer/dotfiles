@@ -34,6 +34,7 @@ values."
      extra-langs
      git
      github
+     javascript
      markdown
      org
      osx
@@ -55,9 +56,13 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(haml-mode
+   dotspacemacs-additional-packages '(
+                                      haml-mode
                                       yaml-mode
-                                      jira-markup-mode)
+                                      jira-markup-mode
+                                      web-mode
+                                      less-css-mode
+                                      rvm)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -215,16 +220,22 @@ layers configuration."
 
   ;; fonts til everything gets fixed
   (set-face-attribute 'default nil :family "Source Code Pro")
-  (set-face-attribute 'default nil :height 165)
+  (set-face-attribute 'default nil :height 180)
 
-  ;; Control P
-  (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
+  (define-key evil-normal-state-map (kbd "SPC b i") 'ido-switch-buffer)
 
   ;; Ruby related
-  ;; Flycheck doesn't work for some reason, and neither does disabling it.
-  ;; (add-hook 'ruby-mode-hook (lambda () (flycheck-mode -1)) 'append)
-  ;; (remove-hook 'ruby-mode-hook 'flycheck-mode)
   (setq-default ruby-version-manager 'rvm)
+
+  ;; Web Mode/JS Mode
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
+
+  (setq tab-width 2)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
@@ -238,7 +249,10 @@ layers configuration."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highlight-indentation-offset 2))
+ '(evil-move-beyond-eol t)
+ '(highlight-indentation-offset 2)
+ '(scroll-margin 10)
+ '(standard-indent 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
