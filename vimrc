@@ -161,8 +161,8 @@ let g:NERDSpaceDelims = 1
 " Always have Rainbow Parens enabled
 let g:rainbow_active = 1
 
-" use jj to exit insert mode
-:imap jj <Esc>
+" use jk to exit insert mode
+:imap jk <Esc>
 
 " Buffer switching with tab
 :nnoremap <Tab> :bnext<cr>

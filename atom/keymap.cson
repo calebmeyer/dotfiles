@@ -25,18 +25,21 @@
 # https://github.com/bevry/cson#what-is-cson
 
 'atom-text-editor.vim-mode.insert-mode:not(.mini)':
-  'j j': 'vim-mode:activate-normal-mode'
   'j k': 'vim-mode:activate-normal-mode'
 
 'atom-text-editor.vim-mode.normal-mode':
+  # leader commands, by starting letter
+  'space f f': 'editor:toggle-current-row-folding'
+  'space g s': 'git-plus:status'
+  'space g c j': 'git-plus:add-all-and-commit' # git commit jira on the command line
+  'space r r': 'rspec:run-all'
+  'space r f': 'rspec:run' # run the current file
+  'space r c': 'rspec:run-for-line' # run the current spec
+
+  ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
+  'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
-  ', r r': 'rspec:run-all'
-  ', r f': 'rspec:run' # run the current file
-  ', r c': 'rspec:run-for-line' # run the current spec
-  'space': 'editor:toggle-current-row-folding'
-  ';': 'ex-mode:open'
-  'K': 'editor:newline'
 
 '.platform-darwin':
   'cmd-k right': 'pane:split-right-moving-current-tab'

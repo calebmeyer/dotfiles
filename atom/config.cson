@@ -22,6 +22,7 @@
       "accents-ui"
       "naturegreen-dark-syntax"
     ]
+    packagesWithKeymapsDisabled: []
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
   welcome:
@@ -110,21 +111,25 @@
   "minimap-codeglance":
     numberOfLines: 9
   react: {}
-".js.jsx.source":
+  "git-plus": {}
+".chef.ruby.source":
   editor:
     preferredLineLength: 120
 ".coffee.jsx.source":
   editor:
     preferredLineLength: 120
-".chef.ruby.source":
+".js.jsx.source":
   editor:
     preferredLineLength: 120
-".gfm.source":
+".diff.source":
+  editor:
+    preferredLineLength: 120
+".gitignore.source":
   editor:
     preferredLineLength: 120
 ".log.source":
   editor:
     preferredLineLength: 120
-".gitignore.source":
+".gfm.source":
   editor:
     preferredLineLength: 120
