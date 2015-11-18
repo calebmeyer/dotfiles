@@ -61,6 +61,7 @@ values."
                                       yaml-mode
                                       jira-markup-mode
                                       web-mode
+                                      rspec-mode
                                       less-css-mode
                                       rvm)
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -236,6 +237,13 @@ layers configuration."
   (setq-default js-indent-level 2)
 
   (setq tab-width 2)
+
+  ;; save on focus lost, and when I switch buffers
+  (add-hook 'focus-out-hook 'save-buffer)
+  (defadvice switch-to-buffer (before save-buffer-now activate)
+    (when buffer-file-name (save-buffer)))
+  (defadvice other-window (before other-window-now activate)
+    (when buffer-file-name (save-buffer)))
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
