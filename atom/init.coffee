@@ -28,3 +28,13 @@ atom.packages.onDidActivatePackage (pack) ->
     Ex = pack.mainModule.provideEx()
     # "buffer" delete (just kills the current tab)
     Ex.registerCommand 'bd', -> atom.workspace.getActivePane().destroyActiveItem()
+
+atom.commands.add 'atom-workspace',
+  'dotfiles:open-init-script': ->
+    atom.workspace.open(process.env.HOME + '/.dotfiles/atom/init.coffee')
+
+  'dotfiles:open-keymap': ->
+    atom.workspace.open(process.env.HOME + '/.dotfiles/atom/keymap.cson')
+
+  'buffer:delete-buffer': ->
+    atom.workspace.getActivePane().destroyActiveItem()

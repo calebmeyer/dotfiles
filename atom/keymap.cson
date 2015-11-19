@@ -23,18 +23,31 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+'atom-text-editor':
+  'ctrl-l': 'vim-mode:scroll-cursor-to-middle-leave'
 
 'atom-text-editor.vim-mode.insert-mode:not(.mini)':
   'j k': 'vim-mode:activate-normal-mode'
 
 'atom-text-editor.vim-mode.normal-mode':
   # leader commands, by starting letter
+  'space b n': 'pane:show-next-item'
+  'space b p': 'pane:show-previous-item'
+  'space b d': 'buffer:delete-buffer'
+  'space f e d': 'dotfiles:open-init-script'
+  'space f e k': 'dotfiles:open-keymap'
   'space f f': 'editor:toggle-current-row-folding'
+  'space f s': 'core:save'
   'space g s': 'git-plus:status'
   'space g c j': 'git-plus:add-all-and-commit' # git commit jira on the command line
   'space r r': 'rspec:run-all'
   'space r f': 'rspec:run' # run the current file
   'space r c': 'rspec:run-for-line' # run the current spec
+  'space s l': 'pane:split-right-moving-current-tab'
+  'space w l': 'window:focus-pane-on-right'
+  'space w h': 'window:focus-pane-on-left'
+  'space w n': 'window:focus-next-pane'
+  'space w p': 'window:focus-previous-pane'
 
   ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
   'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
