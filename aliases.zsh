@@ -29,7 +29,7 @@ alias ds="cd ~/personal/dev_setup"
 
 # ruby aliases
 alias rs="rake site"
-alias rr="bundle exec rspec spec"
+alias rr="bundle exec rspec"
 alias rit="ruby spec/integration/integration.rb"
 alias rake_clean_db="rake db:drop db:create db:migrate db:reset"
 alias bi="bundle install"

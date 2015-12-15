@@ -4,8 +4,7 @@
     scrollPastEnd: true
     preferredLineLength: 120
     showIndentGuide: true
-    fontFamily: "Consolas"
-    fontSize: 16
+    fontFamily: "Source Code Pro"
   core:
     disabledPackages: [
       "language-mustache"
@@ -17,6 +16,7 @@
       "linter-less"
       "line-ending-selector"
       "linter"
+      "org"
     ]
     themes: [
       "accents-ui"
@@ -111,6 +111,13 @@
     numberOfLines: 9
   react: {}
   "git-plus": {}
+  jumpy: {}
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 120
+".erb.html.text":
+  editor:
+    preferredLineLength: 120
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
@@ -118,6 +125,12 @@
   editor:
     preferredLineLength: 120
 ".js.jsx.source":
+  editor:
+    preferredLineLength: 120
+".js.regexp.source":
+  editor:
+    preferredLineLength: 120
+".ruby.source":
   editor:
     preferredLineLength: 120
 ".diff.source":
@@ -130,5 +143,11 @@
   editor:
     preferredLineLength: 120
 ".gfm.source":
+  editor:
+    preferredLineLength: 120
+".org.text":
+  editor:
+    preferredLineLength: 120
+".js.source":
   editor:
     preferredLineLength: 120

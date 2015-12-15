@@ -8,7 +8,7 @@
 [push]
 	default = current
 [github]
-	user = username
+	user = CM022291
 	password = Function37
 [color]
 	ui = auto

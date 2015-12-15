@@ -31,6 +31,7 @@
 
 'atom-text-editor.vim-mode.normal-mode':
   # leader commands, by starting letter
+  'space b b': 'fuzzy-finder:toggle-buffer-finder'
   'space b n': 'pane:show-next-item'
   'space b p': 'pane:show-previous-item'
   'space b d': 'buffer:delete-buffer'
@@ -48,6 +49,8 @@
   'space w h': 'window:focus-pane-on-left'
   'space w n': 'window:focus-next-pane'
   'space w p': 'window:focus-previous-pane'
+  'space w w': 'window:focus-next-pane'
+  'space space': 'jumpy:toggle'
 
   ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
   'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
