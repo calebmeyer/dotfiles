@@ -5,6 +5,9 @@
     preferredLineLength: 120
     showIndentGuide: true
     fontFamily: "Source Code Pro"
+    fontSize: 16
+    softWrap: true
+    softWrapHangingIndent: 4
   core:
     disabledPackages: [
       "language-mustache"
@@ -20,7 +23,10 @@
     ]
     themes: [
       "accents-ui"
-      "naturegreen-dark-syntax"
+      "photon-syntax"
+    ]
+    packagesWithKeymapsDisabled: [
+      "ruby-test-switcher"
     ]
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
@@ -101,11 +107,11 @@
     shellArguments: "--login"
     cursorBlink: false
   "accents-ui":
-    hexColor: "#00bd27"
+    hexColor: "#589af0"
     accentColor:
-      red: 0
-      green: 189
-      blue: 39
+      red: 88
+      green: 154
+      blue: 240
       alpha: 1
   "minimap-codeglance":
     numberOfLines: 9
@@ -115,39 +121,39 @@
 ".js.regexp.replacement.source":
   editor:
     preferredLineLength: 120
-".erb.html.text":
-  editor:
-    preferredLineLength: 120
-".chef.ruby.source":
-  editor:
-    preferredLineLength: 120
-".coffee.jsx.source":
+".js.regexp.source":
   editor:
     preferredLineLength: 120
 ".js.jsx.source":
   editor:
     preferredLineLength: 120
-".js.regexp.source":
+".coffee.jsx.source":
   editor:
     preferredLineLength: 120
-".ruby.source":
+".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".diff.source":
+".erb.html.text":
   editor:
     preferredLineLength: 120
-".gitignore.source":
-  editor:
-    preferredLineLength: 120
-".log.source":
-  editor:
-    preferredLineLength: 120
-".gfm.source":
+".js.source":
   editor:
     preferredLineLength: 120
 ".org.text":
   editor:
     preferredLineLength: 120
-".js.source":
+".gfm.source":
+  editor:
+    preferredLineLength: 120
+".log.source":
+  editor:
+    preferredLineLength: 120
+".gitignore.source":
+  editor:
+    preferredLineLength: 120
+".diff.source":
+  editor:
+    preferredLineLength: 120
+".ruby.source":
   editor:
     preferredLineLength: 120

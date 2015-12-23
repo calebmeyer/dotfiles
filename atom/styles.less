@@ -26,8 +26,16 @@ atom-text-editor::shadow .gutter .line-number.git-line-modified {
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
-atom-text-editor::shadow .cursor {
+atom-text-editor::shadow .classname {
 
+}
+
+// Make selections more visible
+atom-text-editor::shadow .selection .region {
+  border: 1px solid rgb(97, 210, 255);
+  background: rgba(70, 203, 255, .1) !important;
+  box-shadow: 0 0 4px 0px rgb(75, 213, 255), 0 0 4px 0px rgb(75, 213, 255) inset;
+  opacity: 1 !important;
 }
 
 // Use blue for modified rather than orange.

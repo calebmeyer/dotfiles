@@ -53,6 +53,8 @@ alias spacemacs="se"
 alias eff='eval $(thefuck $(fc -ln -1))'
 alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -c"
 alias pickmeup="fortune | cowsay | lolcat"
+alias duu="~/java_workspace/data-upload-2.0/bin/upload"
+alias oozie="~/java_workspace/oozie-client-2.3.2-cdh3u6/bin/oozie"
 
 # general goodies
 mkcd () { mkdir $1 && cd $1; }

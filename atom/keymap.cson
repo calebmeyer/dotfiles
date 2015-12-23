@@ -54,6 +54,8 @@
 
   ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
   'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
+
+'atom-text-editor.vim-mode.normal-mode, .preview-pane, .item-views':
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
 

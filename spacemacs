@@ -23,7 +23,9 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t)
      better-defaults
      clojure
      (colors :variables colors-enable-rainbow-identifiers nil)
@@ -287,6 +289,9 @@ layers configuration. You are free to put any user code."
 
   ;; Ruby related
   (setq-default ruby-version-manager 'rvm)
+  (with-eval-after-load 'ruby
+    (modify-syntax-entry ?_ "w" ruby-mode-syntax-table)
+    (modify-syntax-entry ?- "w" ruby-mode-syntax-table))
 
   ;; Web Mode/JS Mode
   (setq web-mode-markup-indent-offset 2)
@@ -318,6 +323,9 @@ layers configuration. You are free to put any user code."
   ;; do splits properly (focus should go to new window)
   (spacemacs/set-leader-keys "w/" 'split-window-right-and-focus)
   (spacemacs/set-leader-keys "w-" 'split-window-down-and-focus)
+
+  ;; Autocompletion
+  (global-company-mode)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
