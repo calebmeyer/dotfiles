@@ -37,6 +37,7 @@
   'space b d': 'buffer:delete-buffer'
   'space f e d': 'dotfiles:open-init-script'
   'space f e k': 'dotfiles:open-keymap'
+  'space f e s': 'dotfiles:open-stylesheet'
   'space f f': 'editor:toggle-current-row-folding'
   'space f s': 'core:save'
   'space g s': 'git-plus:status'

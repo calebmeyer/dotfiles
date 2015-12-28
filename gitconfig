@@ -7,9 +7,6 @@
 	email = caleb.meyer@cerner.com
 [push]
 	default = current
-[github]
-	user = CM022291
-	password = Function37
 [color]
 	ui = auto
 [core]

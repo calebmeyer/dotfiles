@@ -121,39 +121,39 @@
 ".js.regexp.replacement.source":
   editor:
     preferredLineLength: 120
-".js.regexp.source":
-  editor:
-    preferredLineLength: 120
-".js.jsx.source":
-  editor:
-    preferredLineLength: 120
-".coffee.jsx.source":
+".erb.html.text":
   editor:
     preferredLineLength: 120
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
-".erb.html.text":
+".coffee.jsx.source":
   editor:
     preferredLineLength: 120
-".js.source":
+".js.jsx.source":
   editor:
     preferredLineLength: 120
-".org.text":
+".js.regexp.source":
   editor:
     preferredLineLength: 120
-".gfm.source":
-  editor:
-    preferredLineLength: 120
-".log.source":
-  editor:
-    preferredLineLength: 120
-".gitignore.source":
+".ruby.source":
   editor:
     preferredLineLength: 120
 ".diff.source":
   editor:
     preferredLineLength: 120
-".ruby.source":
+".gitignore.source":
+  editor:
+    preferredLineLength: 120
+".log.source":
+  editor:
+    preferredLineLength: 120
+".gfm.source":
+  editor:
+    preferredLineLength: 120
+".org.text":
+  editor:
+    preferredLineLength: 120
+".js.source":
   editor:
     preferredLineLength: 120

@@ -36,5 +36,9 @@ atom.commands.add 'atom-workspace',
   'dotfiles:open-keymap': ->
     atom.workspace.open(process.env.HOME + '/.dotfiles/atom/keymap.cson')
 
+  'dotfiles:open-stylesheet': ->
+    atom.workspace.open(process.env.HOME + '/.dotfiles/atom/styles.less')
+
+
   'buffer:delete-buffer': ->
     atom.workspace.getActivePane().destroyActiveItem()
