@@ -12,6 +12,7 @@
 [core]
 	autocrlf = input
 	editor = mvim -f
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [credential]
 	helper = osxkeychain
 [alias]

@@ -27,32 +27,32 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t)
      better-defaults
-     clojure
+     ;; clojure
      (colors :variables colors-enable-rainbow-identifiers nil)
-     dash
-     django
+     ;; dash
+     ;; django
      emacs-lisp
-     erc
-     extra-langs
+     ;; erc
+     ;; extra-langs
      git
-     github
-     go
+     ;; github
+     ;; go
      javascript
      markdown
-     org
+     ;; org
      osx
-     prodigy
-     python
+     ;; prodigy
+     ;; python
      react
-     restclient
+     ;; restclient
      ruby
      ruby-on-rails
      themes-megapack
-     shell-scripts
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'top)
-     syntax-checking
+     ;; shell-scripts
+     ;; (shell :variables
+            ;; shell-default-height 30
+            ;; shell-default-position 'top)
+     ;; syntax-checking
      version-control
      ;; vim-powerline
      xkcd
@@ -64,11 +64,8 @@ values."
    dotspacemacs-additional-packages '(
                                       haml-mode
                                       yaml-mode
-                                      jasminejs-mode
-                                      jira-markup-mode
-                                      rspec-mode
                                       less-css-mode
-                                      rvm)
+                                     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
