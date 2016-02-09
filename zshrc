@@ -10,10 +10,13 @@ DISABLE_CORRECTION="true"
 
 # User configuration
 
-export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$HOME/.jenv/bin:$PATH"
 
 export GEM_HOME="$HOME/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0"
 export GEM_PATH="$GEM_HOME"
+
+export GO_PATH="$HOME/go_workspace/packages"
+
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$HOME/.jenv/bin:$GO_PATH:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi

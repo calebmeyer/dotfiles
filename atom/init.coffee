@@ -42,3 +42,7 @@ atom.commands.add 'atom-workspace',
 
   'buffer:delete-buffer': ->
     atom.workspace.getActivePane().destroyActiveItem()
+
+
+# I'll bite
+document.body.classList.add('an-old-hope-modify-ui')

@@ -48,12 +48,13 @@ alias reset="git reset --hard"
 alias clc="copy_last_commit"
 
 # Other
-alias se="/Applications/Emacs.app/Contents/MacOS/Emacs" # emacs window
+alias se="emacsclient -c" # emacs window
 alias spacemacs="se"
+alias e="emacsclient -t"
 alias eff='eval $(thefuck $(fc -ln -1))'
 alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-header-1.5-SNAPSHOT.jar -c"
 alias pickmeup="fortune | cowsay | lolcat"
-alias duu="~/java_workspace/data-upload-2.0/bin/upload"
+alias duu="~/java_workspace/data-upload-1.0.2/bin/upload"
 alias oozie="~/java_workspace/oozie-client-2.3.2-cdh3u6/bin/oozie"
 
 # general goodies

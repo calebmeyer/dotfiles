@@ -1,13 +1,24 @@
 "*":
-  editor:
-    invisibles: {}
-    scrollPastEnd: true
-    preferredLineLength: 120
-    showIndentGuide: true
-    fontFamily: "Source Code Pro"
-    fontSize: 16
-    softWrap: true
-    softWrapHangingIndent: 4
+  Zen: {}
+  "accents-ui":
+    accentColor:
+      alpha: 1
+      blue: 240
+      green: 154
+      red: 88
+    hexColor: "#589af0"
+  "atom-jshint":
+    hintOnModify: false
+  "auto-update-packages": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab and enter"
+    fileBlacklist: [
+      ".log"
+    ]
+    includeCompletionsFromAllBuffers: true
+  "autocomplete-ruby": {}
+  autosave:
+    enabled: true
   core:
     disabledPackages: [
       "language-mustache"
@@ -21,139 +32,128 @@
       "linter"
       "org"
     ]
-    themes: [
-      "accents-ui"
-      "photon-syntax"
-    ]
     packagesWithKeymapsDisabled: [
       "ruby-test-switcher"
     ]
+    themes: [
+      "one-dark-ui"
+      "an-old-hope-syntax"
+    ]
+  "easy-motion": {}
+  editor:
+    fontFamily: "Source Code Pro"
+    fontSize: 16
+    invisibles: {}
+    preferredLineLength: 120
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapHangingIndent: 4
+  emmet: {}
   "exception-reporting":
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
-  welcome:
-    showOnStartup: false
-  autosave:
-    enabled: true
-  "autocomplete-ruby": {}
-  "autocomplete-plus":
-    includeCompletionsFromAllBuffers: true
-    fileBlacklist: [
-      ".log"
-    ]
-    confirmCompletion: "tab and enter"
-  "auto-update-packages": {}
   "filetype-color":
     enabled: "false"
-  minimap:
-    plugins:
-      "git-diff": true
-      "minimap-autohide": true
-      "find-and-replace": true
-      codeglance: true
-  "merge-conflicts": {}
+  "fuzzy-finder":
+    useAlternateScoring: true
+  "git-diff": {}
+  "git-plus": {}
   "highlight-line": {}
+  "isotope-ui":
+    backgroundColor: "false"
+    backgroundImagePath: "/Users/cm022291/PIctures/rainy_night.png"
+    customBackgroundColor: true
+    customBackgroundColorPicker:
+      alpha: 1
+      blue: 52
+      green: 39
+      red: 41
+    fontFamily: "Ubuntu"
+    fontWeight: "Regular"
+    lowContrastTooltip: true
+    spaciousMode: true
+  "jasmine-runner": {}
+  jshint:
+    validateOnlyOnSave: true
+  jumpy: {}
   linter:
-    statusBar: "Show error of the selected line"
     clearOnChange: true
-    lintOnChange: false
     ignoredLinterErrors: [
       "foodcritic"
     ]
+    lintOnChange: false
     lintOnFly: false
-  "jasmine-runner": {}
-  whitespace:
-    ignoreWhitespaceOnCurrentLine: false
-  "atom-jshint":
-    hintOnModify: false
+    statusBar: "Show error of the selected line"
+  "linter-foodcritic": {}
   "linter-jshint":
     jshintExecutablePath: "/usr/local/bin/jshint"
-  jshint:
-    validateOnlyOnSave: true
-  "isotope-ui":
-    backgroundColor: "false"
-    customBackgroundColorPicker:
-      red: 41
-      green: 39
-      blue: 52
-      alpha: 1
-    fontFamily: "Ubuntu"
-    fontWeight: "Regular"
-    spaciousMode: true
-    backgroundImagePath: "/Users/cm022291/PIctures/rainy_night.png"
-    lowContrastTooltip: true
-    customBackgroundColor: true
-  Zen: {}
-  "fuzzy-finder":
-    useAlternateScoring: true
-  "linter-foodcritic": {}
-  "git-diff": {}
-  tabs: {}
-  "vim-mode":
-    useClipboardAsDefaultRegister: true
-    useSmartcaseForSearch: true
-  "one-dark-ui": {}
+  "merge-conflicts": {}
+  minimap:
+    plugins:
+      codeglance: true
+      "find-and-replace": true
+      "git-diff": true
+      "minimap-autohide": true
+  "minimap-codeglance":
+    numberOfLines: 9
   "omni-ruler":
     columns: [
       "80"
       "120"
     ]
+  "one-dark-ui": {}
   "open-recent":
     maxRecentFiles: 10
-  "easy-motion": {}
-  emmet: {}
+  react: {}
   rspec:
     command: "bundle exec rspec"
+  tabs: {}
   term2:
-    shellArguments: "--login"
     cursorBlink: false
-  "accents-ui":
-    hexColor: "#589af0"
-    accentColor:
-      red: 88
-      green: 154
-      blue: 240
-      alpha: 1
-  "minimap-codeglance":
-    numberOfLines: 9
-  react: {}
-  "git-plus": {}
-  jumpy: {}
-".js.regexp.replacement.source":
-  editor:
-    preferredLineLength: 120
-".erb.html.text":
-  editor:
-    preferredLineLength: 120
+    shellArguments: "--login"
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
 ".chef.ruby.source":
   editor:
     preferredLineLength: 120
 ".coffee.jsx.source":
   editor:
     preferredLineLength: 120
-".js.jsx.source":
-  editor:
-    preferredLineLength: 120
-".js.regexp.source":
-  editor:
-    preferredLineLength: 120
-".ruby.source":
-  editor:
-    preferredLineLength: 120
 ".diff.source":
   editor:
     preferredLineLength: 120
-".gitignore.source":
-  editor:
-    preferredLineLength: 120
-".log.source":
+".erb.html.text":
   editor:
     preferredLineLength: 120
 ".gfm.source":
   editor:
     preferredLineLength: 120
-".org.text":
+".gitignore.source":
+  editor:
+    preferredLineLength: 120
+".js.jsx.source":
+  editor:
+    preferredLineLength: 120
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 120
+".js.regexp.source":
   editor:
     preferredLineLength: 120
 ".js.source":
+  editor:
+    preferredLineLength: 120
+".log.source":
+  editor:
+    preferredLineLength: 120
+".org.text":
+  editor:
+    preferredLineLength: 120
+".ruby.source":
   editor:
     preferredLineLength: 120

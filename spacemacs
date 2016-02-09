@@ -36,6 +36,7 @@ values."
      extra-langs
      git
      github
+     go
      javascript
      markdown
      org
@@ -99,9 +100,8 @@ values."
    ;; One of `vim', `emacs' or `hybrid'. Evil is always enabled but if the
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
-   ;; unchanged. (default 'vim)   ;; Either `vim' or `emacs'. Evil is always enabled but if the variable
-   ;; is `emacs' then the `holy-mode' is enabled at startup.
-   dotspacemacs-editing-style 'vim
+   ;; unchanged. (default 'vim)
+   dotspacemacs-editing-style 'hybrid
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -126,10 +126,11 @@ values."
                          leuven
                          monokai
                          zenburn)
-   ;; If non nil the cursor color matches the state color.
+   ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
-   ;; Default font. `powerline-scale' allows you to quickly tweak the mode-line
+   ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
+   ;; Note: for whatever reason, this does not work on my mac
    dotspacemacs-default-font '("Source Code Pro"
                                :size 15
                                :weight normal
@@ -240,7 +241,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -278,12 +279,12 @@ layers configuration. You are free to put any user code."
                               (spacemacs/toggle-fill-column-indicator-on)
                               (set-fill-column 120)))
 
-  ;; line numbers related
-  (setq linum-format "%4d")
-
   ;; fonts til everything gets fixed
   (set-face-attribute 'default nil :family "Source Code Pro")
   (set-face-attribute 'default nil :height 150)
+
+  ;; line numbers related
+  (setq linum-format "%4d")
 
   (define-key evil-normal-state-map (kbd "SPC b i") 'ido-switch-buffer)
 
@@ -327,6 +328,11 @@ layers configuration. You are free to put any user code."
   ;; Autocompletion
   (global-company-mode)
 
+  ;; Emacsclient initial buffer
+  ;; https://github.com/syl20bnr/spacemacs/issues/4486
+  (spacemacs|do-after-display-system-init
+    (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name))))
+
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
     (load "~/local.el"))
@@ -341,6 +347,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(evil-move-beyond-eol t)
  '(evil-shift-width 2)
+ '(exec-path-from-shell-check-startup-files nil)
  '(highlight-indentation-offset 2)
  '(paradox-github-token t)
  '(require-final-newline (quote visit-save))
