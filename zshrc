@@ -51,6 +51,7 @@ antigen bundle pip
 antigen bundle rvm
 antigen bundle compleat
 antigen bundle z
+antigen bundle rimraf/k
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 # syntax highlighting color changes:
@@ -100,3 +101,5 @@ export KEYTIMEOUT=1
 export PATH="$HOME/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi

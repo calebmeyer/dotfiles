@@ -1,8 +1,8 @@
 # my aliases file
 
 # reconfiguring the shell
-alias reconfigure="atom ~/.zshrc"
-alias aliases="atom ~/.aliases.zsh"
+alias reconfigure="$EDITOR ~/.zshrc"
+alias aliases="$EDITOR ~/.aliases.zsh"
 alias reload_aliases="source ~/.aliases.zsh"
 alias reload_theme="rm -rf .antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-calebmeyer-SLASH-cpm-zsh-theme.git/ ; antigen theme calebmeyer/cpm-zsh-theme cpm"
 
@@ -48,7 +48,7 @@ alias reset="git reset --hard"
 alias clc="copy_last_commit"
 
 # Other
-alias se="emacsclient -c" # emacs window
+alias se="/Applications/Emacs.app/Contents/MacOS/Emacs" # emacs window
 alias spacemacs="se"
 alias e="emacsclient -t"
 alias eff='eval $(thefuck $(fc -ln -1))'
@@ -56,6 +56,10 @@ alias oauth="java -jar /Users/cm022291/java_workspace/auth-header/target/auth-he
 alias pickmeup="fortune | cowsay | lolcat"
 alias duu="~/java_workspace/data-upload-1.0.2/bin/upload"
 alias oozie="~/java_workspace/oozie-client-2.3.2-cdh3u6/bin/oozie"
+
+alias ls="k"
+alias ll="k"
+alias la="k -a"
 
 # general goodies
 mkcd () { mkdir $1 && cd $1; }

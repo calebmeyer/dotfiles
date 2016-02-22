@@ -45,6 +45,27 @@
   'Pry':
     'prefix': 'pry'
     'body': 'require "pry"; binding.pry'
+  'do..end':
+    'prefix': 'do'
+    'body': '''
+      do${1: |${2:param}|}
+        $3
+      end$4
+    '''
+  'context':
+    'prefix': 'con'
+    'body': '''
+      context '$1' do
+        $2
+      end$3
+    '''
+  'before':
+    'prefix': 'bef'
+    'body': '''
+      before do
+        $1
+      end
+    '''
 '.source.python':
   'Interact':
     'prefix': 'interact'
