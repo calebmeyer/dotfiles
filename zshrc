@@ -103,3 +103,5 @@ export PATH="$HOME/.bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

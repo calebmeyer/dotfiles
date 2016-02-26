@@ -48,7 +48,6 @@ values."
      osx
      ;; prodigy
      python
-     react
      ;; restclient
      ruby
      ruby-on-rails
@@ -286,7 +285,7 @@ values."
   (setq-default evil-escape-delay 0.5)
 
   ;; show git gutter on left
-  (setq diff-hl-side "left")
+  ;; (setq diff-hl-side "left")
 
   ;; Add ruler at 120 columns
   (add-hook 'prog-mode-hook (lambda ()
@@ -309,10 +308,10 @@ values."
     (modify-syntax-entry ?- "w" ruby-mode-syntax-table))
 
   ;; Web Mode/JS Mode
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  ;; (setq web-mode-markup-indent-offset 2)
+  ;; (setq web-mode-css-indent-offset 2)
+  ;; (setq web-mode-code-indent-offset 2)
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
 
@@ -340,6 +339,7 @@ values."
 
   ;; Autocompletion
   (global-company-mode)
+  (yas-global-mode)
 
   ;; Emacsclient initial buffer
   ;; https://github.com/syl20bnr/spacemacs/issues/4486
