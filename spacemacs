@@ -70,6 +70,7 @@ values."
                                       yaml-mode
                                       less-css-mode
                                       fold-dwim
+                                      web-mode
                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
@@ -283,6 +284,8 @@ values."
   ;; Evil related
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.5)
+  ;; Per #5261, this may make indents correct when using the escape sequence
+  (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
   ;; show git gutter on left
   ;; (setq diff-hl-side "left")
@@ -311,7 +314,7 @@ values."
   ;; (setq web-mode-markup-indent-offset 2)
   ;; (setq web-mode-css-indent-offset 2)
   ;; (setq web-mode-code-indent-offset 2)
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
 
@@ -365,6 +368,8 @@ values."
  '(highlight-indentation-offset 2)
  '(paradox-github-token t)
  '(require-final-newline (quote visit-save))
+ '(ruby-align-to-stmt-keywords (quote (if unless def)))
+ '(ruby-deep-indent-paren nil)
  '(scroll-margin 10)
  '(standard-indent 2))
 (custom-set-faces
