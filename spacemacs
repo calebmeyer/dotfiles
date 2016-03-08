@@ -48,6 +48,7 @@ values."
      osx
      ;; prodigy
      python
+     ranger
      ;; restclient
      ruby
      ruby-on-rails
@@ -71,6 +72,7 @@ values."
                                       less-css-mode
                                       fold-dwim
                                       web-mode
+                                      evil-indent-textobject
                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
@@ -284,8 +286,10 @@ values."
   ;; Evil related
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.5)
-  ;; Per #5261, this may make indents correct when using the escape sequence
-  (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
+  ;; Per #5261, this may make indents correct when using the escape sequence (NOPE)
+  ;; (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
+  (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+  (define-key evil-normal-state-map (kbd "K") 'split-line)
 
   ;; show git gutter on left
   ;; (setq diff-hl-side "left")

@@ -20,6 +20,13 @@
   'Console log':
     'prefix': 'con'
     'body': "console.log(${1:''});$2"
+  'beforeEach':
+    'prefix': 'bef'
+    'body':'''
+      beforeEach(function() {
+        $1
+      });$2
+    '''
   'describe':
     'prefix': 'desc'
     'body':'''
@@ -34,13 +41,9 @@
         ${2://body of the test}
       });$3
     '''
-  'beforeEach':
-    'prefix': 'befe'
-    'body':'''
-      beforeEach(function() {
-        $1
-      });$2
-    '''
+  'spyOn':
+    'prefix': 'spyOn'
+    'body': "spyOn(${1:window}, '${2:functionName}');"
 '.source.ruby':
   'Pry':
     'prefix': 'pry'
