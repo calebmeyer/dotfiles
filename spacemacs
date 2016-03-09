@@ -70,9 +70,9 @@ values."
                                       haml-mode
                                       yaml-mode
                                       less-css-mode
-                                      fold-dwim
                                       web-mode
-                                      evil-indent-textobject
+                                      origami
+                                      (evil-remap :location (recipe :fetcher github :repo "GuiltyDolphin/evil-remap"))
                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
@@ -285,11 +285,12 @@ values."
   layers configuration. You are free to put any user code."
   ;; Evil related
   (setq-default evil-escape-key-sequence "jk")
-  (setq-default evil-escape-delay 0.5)
+  (setq-default evil-escape-delay 0.2)
   ;; Per #5261, this may make indents correct when using the escape sequence (NOPE)
   ;; (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
-  (define-key evil-normal-state-map (kbd ";") 'evil-ex)
-  (define-key evil-normal-state-map (kbd "K") 'split-line)
+  (require 'evil-remap)
+  (evil-nnoremap ";" 'evil-ex)
+  (evil-nnoremap "K" 'split-line)
 
   ;; show git gutter on left
   ;; (setq diff-hl-side "left")
@@ -352,6 +353,9 @@ values."
   ;; https://github.com/syl20bnr/spacemacs/issues/4486
   (spacemacs|do-after-display-system-init
     (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name))))
+
+  (setq layouts-enable-autosave t)
+  (setq dotspacemacs-auto-resume-layouts t)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")

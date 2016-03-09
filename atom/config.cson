@@ -91,9 +91,13 @@
   minimap:
     plugins:
       codeglance: true
+      codeglanceDecorationsZIndex: 0
       "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
+      "git-diffDecorationsZIndex": 0
       "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
   "minimap-codeglance":
     numberOfLines: 9
   "omni-ruler":
