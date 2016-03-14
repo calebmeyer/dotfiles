@@ -38,13 +38,15 @@ values."
      ;; django
      emacs-lisp
      ;; erc
+     evil-remap
      ;; extra-langs
      git
      ;; github
+     ;; gnus
      ;; go
      javascript
      markdown
-     ;; org
+     org
      osx
      ;; prodigy
      python
@@ -296,9 +298,18 @@ values."
   ;; (setq diff-hl-side "left")
 
   ;; Add ruler at 120 columns
-  (add-hook 'prog-mode-hook (lambda ()
-                              (spacemacs/toggle-fill-column-indicator-on)
-                              (set-fill-column 120)))
+  ;; (add-hook 'prog-mode-hook (lambda ()
+                              ;; (spacemacs/toggle-fill-column-indicator-on)
+                              ;; (set-fill-column 120)))
+
+  ;; Add folding
+  (add-hook 'prog-mode-hook 'origami-mode)
+  (evil-nnoremap "F" 'origami-recursively-toggle-node)
+  (spacemacs/set-leader-keys "fo" 'origami-open-node)
+  (spacemacs/set-leader-keys "fO" 'origami-open-all-nodes)
+  (spacemacs/set-leader-keys "fc" 'origami-close-node)
+  (spacemacs/set-leader-keys "fC" 'origami-close-all-nodes)
+  (spacemacs/set-leader-keys "fn" 'origami-show-only-node)
 
   ;; fonts til everything gets fixed
   (set-face-attribute 'default nil :family "Source Code Pro")
@@ -306,8 +317,6 @@ values."
 
   ;; line numbers related
   (setq linum-format "%4d")
-
-  (define-key evil-normal-state-map (kbd "SPC b i") 'ido-switch-buffer)
 
   ;; Ruby related
   (setq-default ruby-version-manager 'rvm)
@@ -357,6 +366,7 @@ values."
   (setq layouts-enable-autosave t)
   (setq dotspacemacs-auto-resume-layouts t)
 
+
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
     (load "~/local.el"))
@@ -389,4 +399,5 @@ values."
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(font-lock-comment-face ((t (:foreground "SteelBlue4" :background nil))))
+ '(font-lock-type-face ((t (:inherit bold :foreground "#00b0b3"))))
  '(highlight-indentation-face ((t (:background "gray21")))))
