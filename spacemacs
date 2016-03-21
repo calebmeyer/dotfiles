@@ -37,11 +37,13 @@ values."
      ;; dash
      ;; django
      emacs-lisp
+     ;; emoji
      ;; erc
-     evil-remap
+     ;; evil-remap
+     evil-snipe
      ;; extra-langs
      git
-     ;; github
+     github
      ;; gnus
      ;; go
      javascript
@@ -60,7 +62,8 @@ values."
             shell-default-height 30
             shell-default-position 'top)
      ;; syntax-checking
-     version-control
+     (version-control :variables
+                      version-control-diff-tool 'diff-hl)
      ;; vim-powerline
      ;; xkcd
      )
@@ -108,7 +111,7 @@ values."
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
    ;; unchanged. (default 'vim)
-   dotspacemacs-editing-style 'hybrid
+   dotspacemacs-editing-style '(hybrid :variables hybrid-mode-enable-hjkl-bindings t)
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -132,12 +135,13 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          spacemacs-dark
+                         zenburn
                          solarized-light
                          solarized-dark
                          spacemacs-light
                          leuven
                          monokai
-                         zenburn)
+                        )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -295,7 +299,7 @@ values."
   (evil-nnoremap "K" 'split-line)
 
   ;; show git gutter on left
-  ;; (setq diff-hl-side "left")
+  (setq diff-hl-side 'left)
 
   ;; Add ruler at 120 columns
   ;; (add-hook 'prog-mode-hook (lambda ()
@@ -366,6 +370,8 @@ values."
   (setq layouts-enable-autosave t)
   (setq dotspacemacs-auto-resume-layouts t)
 
+  ;; makes visual line navigation actually work.
+  (advice-add 'spacemacs/toggle-visual-line-navigation :after #'evil-normalize-keymaps)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
@@ -398,6 +404,7 @@ values."
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(font-lock-comment-face ((t (:foreground "SteelBlue4" :background nil))))
- '(font-lock-type-face ((t (:inherit bold :foreground "#00b0b3"))))
- '(highlight-indentation-face ((t (:background "gray21")))))
+ ;; '(font-lock-comment-face ((t (:foreground "SteelBlue4" :background nil))))
+ ;; '(font-lock-type-face ((t (:inherit bold :foreground "#00b0b3"))))
+ ;; '(highlight-indentation-face ((t (:background "gray21"))))
+ )
