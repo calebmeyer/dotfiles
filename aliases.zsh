@@ -26,6 +26,7 @@ alias rust_workspace="cd ~/personal/rust_workspace"
 alias bletchley="cd ~/chef_workspace/bletchley"
 alias cmd="cd ~/ruby_workspace/other_teams/command_center"
 alias ds="cd ~/personal/dev_setup"
+alias tw="cd ~/ruby_workspace/clients/tabwhoa"
 
 # ruby aliases
 alias rs="rake site"
@@ -39,6 +40,7 @@ alias open_lint="open target/site/Lint-Results/lint-results.html"
 alias coverage="open target/site/Code-Coverage/index.html"
 alias site_index="open target/site/index.html"
 alias kill_rails='kill "$(lsof -i :3000 -t)"'
+alias tags='ctags -R --languages=ruby --exclude=.git --exclude=log .'
 
 # git aliases
 alias master="git checkout master"

@@ -20,6 +20,7 @@
   autosave:
     enabled: true
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "language-mustache"
       "linter-haml"
@@ -29,7 +30,6 @@
       "linter-foodcritic"
       "linter-less"
       "line-ending-selector"
-      "linter"
       "org"
     ]
     packagesWithKeymapsDisabled: [
@@ -37,7 +37,7 @@
     ]
     themes: [
       "one-dark-ui"
-      "an-old-hope-syntax"
+      "zenbow-warm-syntax"
     ]
   "easy-motion": {}
   editor:
@@ -78,11 +78,13 @@
   jumpy: {}
   linter:
     clearOnChange: true
+    errorPanelHeight: 151
     ignoredLinterErrors: [
       "foodcritic"
     ]
     lintOnChange: false
     lintOnFly: false
+    showErrorPanel: false
     statusBar: "Show error of the selected line"
   "linter-foodcritic": {}
   "linter-jshint":

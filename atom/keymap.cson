@@ -42,9 +42,12 @@
   'space f s': 'core:save'
   'space g s': 'git-plus:status'
   'space g c j': 'git-plus:add-all-and-commit' # git commit jira on the command line
+  'space j f': 'symbols-view:toggle-file-symbols' # jump to symbol in file
+  'space j j': 'symbols-view:toggle-project_symbols' # jump to any symbol
   'space r r': 'rspec:run-all'
   'space r f': 'rspec:run' # run the current file
   'space r c': 'rspec:run-for-line' # run the current spec
+  'space r t': 'rspec:run-for-line'
   'space s l': 'pane:split-right-moving-current-tab'
   'space w l': 'window:focus-pane-on-right'
   'space w h': 'window:focus-pane-on-left'
@@ -55,12 +58,14 @@
 
   ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
   'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
+  'F': 'editor:toggle-current-row-folding'
 
 'atom-text-editor.vim-mode.normal-mode, .preview-pane, .item-views':
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
 
 '.platform-darwin':
+  'cmd-b': 'symbols-view:go-to-declaration'
   'cmd-k right': 'pane:split-right-moving-current-tab'
   'ctrl-n': 'tree-view:toggle-focus'
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'

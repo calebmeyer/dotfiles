@@ -78,6 +78,7 @@ values."
                                       web-mode
                                       origami
                                       (evil-remap :location (recipe :fetcher github :repo "GuiltyDolphin/evil-remap"))
+                                      fireplace
                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(flycheck)
@@ -161,7 +162,7 @@ values."
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
    dotspacemacs-major-mode-leader-key ","
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
-   ;; (default "C-M-m)
+   ;; (default "C-M-m")
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
    ;; (default "SPC")
@@ -326,7 +327,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-face-attribute 'default nil :height 150)
 
   ;; line numbers related
-  (setq linum-format "%4d")
+  ;; (setq linum-format "%4d")
 
   ;; Ruby related
   (setq-default ruby-version-manager 'rvm)
@@ -353,25 +354,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (define-key restclient-mode-map
       (kbd "C-RET") 'restclient-http-send-current-stay-in-window))
 
-  ;; save on focus lost, and when I switch buffers (Not working for non-file buffers yet)
-  ;; (add-hook 'focus-out-hook 'save-buffer)
-  ;; (defadvice switch-to-buffer (before save-buffer-now activate)
-  ;;   (when buffer-file-name (save-buffer)))
-  ;; (defadvice other-window (before other-window-now activate)
-  ;;   (when buffer-file-name (save-buffer)))
-
   ;; do splits properly (focus should go to new window)
   (spacemacs/set-leader-keys "w/" 'split-window-right-and-focus)
   (spacemacs/set-leader-keys "w-" 'split-window-down-and-focus)
 
+  ;; toggle word wrap (the way I think of it)
+  (spacemacs/set-leader-keys "tw" 'toggle-truncate-lines)
+  (spacemacs/set-leader-keys "tW" 'spacemacs/toggle-whitespace)
+
   ;; Autocompletion
   (global-company-mode)
   (yas-global-mode)
-
-  ;; Emacsclient initial buffer
-  ;; https://github.com/syl20bnr/spacemacs/issues/4486
-  (spacemacs|do-after-display-system-init
-    (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name))))
 
   (setq layouts-enable-autosave t)
   (setq dotspacemacs-auto-resume-layouts t)
@@ -401,7 +394,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(ruby-align-to-stmt-keywords (quote (if unless def)))
  '(ruby-deep-indent-paren nil)
  '(scroll-margin 10)
- '(standard-indent 2))
+ '(standard-indent 2)
+ '(vc-follow-symlinks t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -409,8 +403,4 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- ;; '(font-lock-comment-face ((t (:foreground "SteelBlue4" :background nil))))
- ;; '(font-lock-type-face ((t (:inherit bold :foreground "#00b0b3"))))
- ;; '(highlight-indentation-face ((t (:background "gray21"))))
- )
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
