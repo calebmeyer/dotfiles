@@ -383,6 +383,46 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-both-to-C))
   (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
 
+  ;; spaceline related
+  ;; spaceline separators
+  ;; Valid Values: alternate, arrow, arrow-fade, bar, box, brace,
+  ;; butt, chamfer, contour, curve, rounded, roundstub, wave, zigzag,
+  ;; utf-8.
+  ;; note that changing this setting requires a full restart
+  (setq powerline-default-separator 'arrow-fade)
+
+  (spaceline-install
+    ;; left
+   '(((evil-state window-number)
+      :fallback evil-state
+      ;; :separator "|"
+      :face highlight-face)
+      anzu
+      auto-compile
+      (buffer-modified buffer-size buffer-id remote-host)
+      major-mode
+      ((flycheck-error flycheck-warning flycheck-info)
+      :when active)
+      (((minor-modes :separator spaceline-minor-modes-separator)
+        process)
+      :when active)
+      (erc-track :when active)
+      (version-control :when active)
+      (org-pomodoro :when active)
+      (org-clock :when active)
+      nyan-cat)
+
+    ;; right
+    '((battery)
+      selection-info
+      ((buffer-encoding-abbrev
+        point-position
+        line-column)
+      :separator " | ")
+      (global :when active)
+      buffer-position
+      hud))
+
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
     (load "~/local.el"))
@@ -398,6 +438,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(create-lockfiles nil)
  '(evil-move-beyond-eol t)
  '(evil-shift-width 2)
+ '(evil-want-Y-yank-to-eol t)
  '(exec-path-from-shell-check-startup-files nil)
  '(highlight-indentation-offset 2)
  '(paradox-github-token t)
