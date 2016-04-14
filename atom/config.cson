@@ -31,13 +31,14 @@
       "linter-less"
       "line-ending-selector"
       "org"
+      "terminal-plus"
     ]
     packagesWithKeymapsDisabled: [
       "ruby-test-switcher"
     ]
     themes: [
       "one-dark-ui"
-      "zenbow-warm-syntax"
+      "earthsung-by-jackson-syntax"
     ]
   "easy-motion": {}
   editor:
@@ -54,6 +55,8 @@
     userId: "a98159d9-1fe0-0af8-8f55-d78a80ba6738"
   "filetype-color":
     enabled: "false"
+  "find-and-replace":
+    focusEditorAfterSearch: true
   "fuzzy-finder":
     useAlternateScoring: true
   "git-diff": {}
@@ -117,6 +120,13 @@
   term2:
     cursorBlink: false
     shellArguments: "--login"
+  "terminal-plus":
+    core: {}
+    style:
+      animationSpeed: 2
+    toggles:
+      autoClose: true
+      cursorBlink: false
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
@@ -136,6 +146,7 @@
 ".erb.html.text":
   editor:
     preferredLineLength: 120
+    softWrapHangingIndent: 4
 ".gfm.source":
   editor:
     preferredLineLength: 120
@@ -163,3 +174,4 @@
 ".ruby.source":
   editor:
     preferredLineLength: 120
+    softWrapHangingIndent: 4
