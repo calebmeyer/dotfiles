@@ -8,18 +8,15 @@ export ZDOTDIR=$HOME
 # Zsh, I know what I'm doing when I type rake, and it wasn't that I intended to type make. Same for mvim.
 DISABLE_CORRECTION="true"
 
-# User configuration
-
-
 export GEM_HOME="$HOME/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0"
 export GEM_PATH="$GEM_HOME"
 
 export GO_PATH="$HOME/go_workspace/packages"
 
-export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:$HOME/.jenv/bin:$GO_PATH:$PATH"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/anaconda3/bin:$HOME/.rvm/bin:$HOME/.jenv/bin:$GO_PATH:$PATH"
 
 source $ZSH/oh-my-zsh.sh
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+# if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
@@ -32,12 +29,6 @@ else
   export EDITOR='vim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 if [ -f ~/.docker.zsh ]; then source ~/.docker.zsh; fi
@@ -47,10 +38,6 @@ source ~/.dotfiles/binaries/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle pip
-antigen bundle rvm
-antigen bundle compleat
-antigen bundle z
 antigen bundle rimraf/k
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -63,45 +50,19 @@ ZSH_HIGHLIGHT_STYLES[pre-command]='fg=cyan,bold,underline'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=cyan,underline'
 
-# vim text objects, so I can do ci" to change inside quotes
-antigen bundle hchbaw/opp.zsh opp.zsh
-
-# # Setup zsh-autosuggestions
-# antigen bundle tarruda/zsh-autosuggestions
-#
-# # Enable autosuggestions automatically
-# zle-line-init() {
-#   zle autosuggest-start
-# }
-# zle -N zle-line-init
-#
-# # right arrow accepts entire suggestion.
-# AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-#
-# bindkey '^T' autosuggest-toggle
-#
-# antigen bundle zsh-users/zsh-history-substring-search
-
 antigen theme calebmeyer/cpm-zsh-theme cpm
 
 antigen apply
 
 # make the terminal work like vim
 bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^?' backward-delete-char
+bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^r' history-incremental-search-backward
 
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
-
-export PATH="$HOME/.bin:$PATH"
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# export KEYTIMEOUT=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
