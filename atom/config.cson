@@ -32,13 +32,14 @@
       "line-ending-selector"
       "org"
       "terminal-plus"
+      "glowing-cursor"
     ]
     packagesWithKeymapsDisabled: [
       "ruby-test-switcher"
     ]
     themes: [
       "one-dark-ui"
-      "earthsung-by-jackson-syntax"
+      "neon-syntax"
     ]
   "easy-motion": {}
   editor:
@@ -61,6 +62,18 @@
     useAlternateScoring: true
   "git-diff": {}
   "git-plus": {}
+  "glowing-cursor":
+    cursorWidth: 2
+    glowColor:
+      alpha: 1
+      blue: 255
+      green: 213
+      red: 65
+    innerColor:
+      alpha: 1
+      blue: 255
+      green: 213
+      red: 54
   "highlight-line": {}
   "isotope-ui":
     backgroundColor: "false"
@@ -97,6 +110,8 @@
     plugins:
       codeglance: true
       codeglanceDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
@@ -143,6 +158,7 @@
 ".diff.source":
   editor:
     preferredLineLength: 120
+    softWrapHangingIndent: 4
 ".erb.html.text":
   editor:
     preferredLineLength: 120

@@ -391,9 +391,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; note that changing this setting requires a full restart
   (setq powerline-default-separator 'arrow-fade)
 
+  (spaceline-define-segment evil-current-state
+    (upcase (format "%s" evil-state))
+    :when (bound-and-true-p evil-local-mode))
+
   (spaceline-install
     ;; left
-   '(((evil-state window-number)
+   '(((evil-current-state window-number)
       :fallback evil-state
       ;; :separator "|"
       :face highlight-face)
@@ -422,6 +426,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (global :when active)
       buffer-position
       hud))
+
+
+  ;; git link settings for cerner's github
+  (eval-after-load "git-link"
+    '(progn
+       (add-to-list 'git-link-remote-alist
+                    '("github.cerner.com" git-link-github))
+       (add-to-list 'git-link-commit-remote-alist
+                    '("github.cerner.com" git-link-commit-github))))
+  ;; use the latest commit when getting links
+  (setq git-link-use-commit t)
 
   ;; Load local customizations (local to the computer)
   (when (file-exists-p "~/local.el")
