@@ -52,6 +52,7 @@
   'space r c': 'rspec:run-for-line' # run the current spec
   'space r t': 'rspec:run-for-line'
   'space s l': 'pane:split-right-moving-current-tab'
+  'space v': 'expand-region:expand'
   'space w l': 'window:focus-pane-on-right'
   'space w h': 'window:focus-pane-on-left'
   'space w n': 'window:focus-next-pane'
@@ -65,6 +66,12 @@
 'atom-text-editor.vim-mode.normal-mode, .preview-pane, .item-views':
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
+
+'atom-text-editor.vim-mode.visual-mode':
+  'v': 'expand-region:expand'
+  'V': 'expand-region:shrink'
+  '/': 'project-find:show'
+
 
 '.platform-darwin':
   'cmd-b': 'symbols-view:go-to-declaration'
