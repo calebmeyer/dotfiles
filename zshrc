@@ -66,3 +66,5 @@ bindkey '^r' history-incremental-search-backward
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi
+
+export PATH="$HOME/.bin:$PATH"

@@ -3,10 +3,13 @@
   "accents-ui":
     accentColor:
       alpha: 1
-      blue: 240
-      green: 154
-      red: 88
-    hexColor: "#589af0"
+      blue: 200
+      green: 157
+      red: 50
+    hexColor: "#329dc8"
+  "atom-beautify":
+    general:
+      _analyticsUserId: "095a40eb-6cc8-4637-ab7f-2770be2560be"
   "atom-jshint":
     hintOnModify: false
   "auto-update-packages": {}
@@ -33,13 +36,15 @@
       "org"
       "terminal-plus"
       "glowing-cursor"
+      "pigments"
+      "minimap-autohide"
     ]
     packagesWithKeymapsDisabled: [
       "ruby-test-switcher"
     ]
     themes: [
       "one-dark-ui"
-      "neon-syntax"
+      "zenbow-warm-syntax"
     ]
   "easy-motion": {}
   editor:
@@ -59,6 +64,7 @@
   "find-and-replace":
     focusEditorAfterSearch: true
   "fuzzy-finder":
+    preserveLastSearch: true
     useAlternateScoring: true
   "git-diff": {}
   "git-plus": {}
@@ -116,7 +122,7 @@
       "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
       "git-diffDecorationsZIndex": 0
-      "minimap-autohide": true
+      "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
   "minimap-codeglance":
     numberOfLines: 9
@@ -131,6 +137,8 @@
   react: {}
   rspec:
     command: "bundle exec rspec"
+  "steam-pirate-ui":
+    blurBackground: "5"
   tabs: {}
   term2:
     cursorBlink: false
@@ -169,6 +177,14 @@
 ".gitignore.source":
   editor:
     preferredLineLength: 120
+".haml.text":
+  editor:
+    preferredLineLength: 120
+    softWrapHangingIndent: 4
+".hamlc.text":
+  editor:
+    preferredLineLength: 120
+    softWrapHangingIndent: 4
 ".js.jsx.source":
   editor:
     preferredLineLength: 120

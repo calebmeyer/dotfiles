@@ -290,6 +290,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; fonts til everything gets fixed
+  (set-face-attribute 'default nil :family "Source Code Pro")
+  (set-face-attribute 'default nil :height 150)
   )
 
 (defun dotspacemacs/user-config ()
@@ -321,13 +325,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (spacemacs/set-leader-keys "fc" 'origami-close-node)
   (spacemacs/set-leader-keys "fC" 'origami-close-all-nodes)
   (spacemacs/set-leader-keys "fn" 'origami-show-only-node)
-
-  ;; fonts til everything gets fixed
-  (set-face-attribute 'default nil :family "Source Code Pro")
-  (set-face-attribute 'default nil :height 150)
-
-  ;; line numbers related
-  ;; (setq linum-format "%4d")
 
   ;; Ruby related
   (setq-default ruby-version-manager 'rvm)
@@ -456,6 +453,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(evil-want-Y-yank-to-eol t)
  '(exec-path-from-shell-check-startup-files nil)
  '(highlight-indentation-offset 2)
+ '(ns-use-srgb-colorspace nil)
  '(paradox-github-token t)
  '(require-final-newline (quote visit-save))
  '(ruby-align-to-stmt-keywords (quote (if unless def)))

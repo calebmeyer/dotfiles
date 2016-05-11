@@ -31,6 +31,7 @@
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
   'space space': 'command-palette:toggle'
+  'space c l': 'editor:toggle-line-comments'
 
 'atom-text-editor.vim-mode.normal-mode':
   # leader commands, by starting letter
@@ -38,6 +39,7 @@
   'space b n': 'pane:show-next-item'
   'space b p': 'pane:show-previous-item'
   'space b d': 'buffer:delete-buffer'
+  'space b D': 'tabs:close-all-tabs' # buffer Delete all
   'space f e d': 'dotfiles:open-init-script'
   'space f e k': 'dotfiles:open-keymap'
   'space f e s': 'dotfiles:open-stylesheet'
@@ -71,7 +73,6 @@
   'v': 'expand-region:expand'
   'V': 'expand-region:shrink'
   '/': 'project-find:show'
-
 
 '.platform-darwin':
   'cmd-b': 'symbols-view:go-to-declaration'
