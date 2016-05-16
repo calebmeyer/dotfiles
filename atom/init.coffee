@@ -36,6 +36,9 @@ atom.packages.onDidActivatePackage (pack) ->
     Ex = pack.mainModule.provideEx()
     # "buffer" delete (just kills the current tab)
     Ex.registerCommand 'bd', -> atom.workspace.getActivePane().destroyActiveItem()
+    Ex.registerCommand 'A', -> # A for alternate file (goes to spec)
+      currentView = atom.views.getView(atom.workspace.getActiveTextEditor())
+      atom.commands.dispatch(currentView, 'atom-spec-finder:toggle')
 
 atom.commands.add 'atom-workspace',
   'dotfiles:open-init-script': ->
@@ -47,10 +50,11 @@ atom.commands.add 'atom-workspace',
   'dotfiles:open-stylesheet': ->
     atom.workspace.open(process.env.HOME + '/.dotfiles/atom/styles.less')
 
-
   'buffer:delete-buffer': ->
     atom.workspace.getActivePane().destroyActiveItem()
 
-
-# I'll bite
-document.body.classList.add('an-old-hope-modify-ui')
+  'window:close-other-windows': ->
+    BrowserWindow = require('electron').remote.BrowserWindow;
+    allWindows = BrowserWindow.getAllWindows()
+    currentWindow = BrowserWindow.getFocusedWindow()
+    window.close() for window in allWindows when window.id isnt currentWindow.id
