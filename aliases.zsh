@@ -27,6 +27,7 @@ alias bletchley="cd ~/chef_workspace/bletchley"
 alias cmd="cd ~/ruby_workspace/other_teams/command_center"
 alias ds="cd ~/personal/dev_setup"
 alias tw="cd ~/ruby_workspace/clients/tabwhoa"
+alias d="cd ~/ruby_workspace/clients/dossier"
 
 # ruby aliases
 alias rs="rake site"

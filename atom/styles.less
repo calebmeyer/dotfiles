@@ -27,21 +27,31 @@ atom-text-editor::shadow .gutter .line-number.git-line-modified {
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
 atom-text-editor::shadow .classname {
-
 }
 
-// Make cursor more visible
-atom-text-editor::shadow .cursor {
+@cursor-color: #3AF;
 
+// Make I-beam cursor more visible
+atom-text-editor.vim-mode.insert-mode::shadow .cursor {
+  border-color: @cursor-color;
+}
+
+// Make block cursor more visible
+atom-text-editor.vim-mode.normal-mode::shadow .cursor {
+  border: 1.5px solid @cursor-color !important;
+  border-radius: 3px;
+  box-shadow: 0 0 7px @cursor-color;
+  background: none !important;
+  opacity: 1 !important;
 }
 
 // Make selections more visible
-atom-text-editor::shadow .selection .region {
-  border: 1px solid rgb(97, 210, 255);
-  background: rgba(70, 203, 255, .1) !important;
-  box-shadow: 0 0 4px 0px rgb(75, 213, 255), 0 0 4px 0px rgb(75, 213, 255) inset;
-  opacity: 1 !important;
-}
+// atom-text-editor::shadow .selection .region {
+//   border: 1px solid rgb(97, 210, 255);
+//   background: rgba(70, 203, 255, .1) !important;
+//   box-shadow: 0 0 4px 0px rgb(75, 213, 255), 0 0 4px 0px rgb(75, 213, 255) inset;
+//   opacity: 1 !important;
+// }
 
 // Use blue for modified rather than orange.
 @blueish: #00c4ff;

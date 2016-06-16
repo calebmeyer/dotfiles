@@ -133,8 +133,6 @@ set backspace=indent,eol,start
 set nofoldenable " turn it back on with zi
 set foldmethod=indent
 
-set encoding=utf-8
-
 " .md means markdown, not modula2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 

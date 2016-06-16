@@ -13,7 +13,10 @@ export GEM_PATH="$GEM_HOME"
 
 export GO_PATH="$HOME/go_workspace/packages"
 
-export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/anaconda3/bin:$HOME/.rvm/bin:$HOME/.jenv/bin:$GO_PATH:$PATH"
+export RUST_PATH="$HOME/.cargo/bin"
+export RUST_SRC_PATH="/usr/local/src/rust/src"
+
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/anaconda3/bin:$HOME/.rvm/bin:$HOME/.jenv/bin:$GO_PATH:$RUST_PATH:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 # if which jenv > /dev/null; then eval "$(jenv init -)"; fi

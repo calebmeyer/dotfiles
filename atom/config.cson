@@ -38,13 +38,17 @@
       "glowing-cursor"
       "pigments"
       "minimap-autohide"
+      "linter-rubocop"
+      "linter"
+      "linter-proselint"
+      "minimap-cursorline"
     ]
     packagesWithKeymapsDisabled: [
       "ruby-test-switcher"
     ]
     themes: [
       "one-dark-ui"
-      "zenbow-warm-syntax"
+      "monokai"
     ]
   "easy-motion": {}
   editor:
@@ -63,6 +67,7 @@
     enabled: "false"
   "find-and-replace":
     focusEditorAfterSearch: true
+    openProjectFindResultsInRightPane: true
   "fuzzy-finder":
     preserveLastSearch: true
     useAlternateScoring: true
@@ -111,6 +116,7 @@
   "linter-foodcritic": {}
   "linter-jshint":
     jshintExecutablePath: "/usr/local/bin/jshint"
+  "linter-rubocop": {}
   "merge-conflicts": {}
   minimap:
     plugins:
@@ -134,11 +140,29 @@
   "one-dark-ui": {}
   "open-recent":
     maxRecentFiles: 10
+  "outline-selection":
+    outlineColor:
+      red: 61
+      green: 190
+      blue: 255
+      alpha: 1
+    outlineOpacity: 0.75
+    outlineWidth: 2
+  racer:
+    cargoHome: "~/.cargo"
+    racerBinPath: "/Users/cm022291/.cargo/bin/racer"
   react: {}
   rspec:
     command: "bundle exec rspec"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   "steam-pirate-ui":
     blurBackground: "5"
+  swackets: {}
   tabs: {}
   term2:
     cursorBlink: false

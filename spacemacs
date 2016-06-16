@@ -56,6 +56,7 @@ values."
      ;; restclient
      ruby
      ruby-on-rails
+     rust
      themes-megapack
      shell-scripts
      (shell :variables
@@ -468,4 +469,5 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(font-lock-comment-face ((t (:foreground "#2aa1ae")))))
