@@ -41,6 +41,10 @@ atom.commands.add 'atom-text-editor',
     text = editor.getTextInRange(cursor, [row, lastColumn])
     atom.clipboard.write(text)
 
+  'settings:toggle-vcs-ignored': (event) ->
+    ignored = atom.config.get('core.excludeVcsIgnoredPaths')
+    atom.config.set('core.excludeVcsIgnoredPaths', !ignored)
+
 # Ex mode extensions
 atom.packages.onDidActivatePackage (pack) ->
   if pack.name == 'ex-mode'

@@ -26,6 +26,7 @@
 'atom-text-editor':
   'ctrl-l': 'vim-mode:scroll-cursor-to-middle-leave'
 
+
 'atom-text-editor.vim-mode.insert-mode:not(.mini)':
   'j k': 'vim-mode:activate-normal-mode'
 
@@ -59,6 +60,7 @@
   'space r c': 'rspec:run-for-line' # run the current spec
   'space r t': 'rspec:run-for-line'
   'space s l': 'pane:split-right-moving-current-tab'
+  'space t i': 'settings:toggle-vcs-ignored'
   'space v': 'expand-region:expand'
   'space w l': 'window:focus-pane-on-right'
   'space w h': 'window:focus-pane-on-left'
@@ -80,6 +82,9 @@
   'v': 'expand-region:expand'
   'V': 'expand-region:shrink'
   '/': 'project-find:show'
+
+'atom-workspace':
+  'ctrl-alt-cmd-i': 'settings:toggle-vcs-ignored'
 
 '.platform-darwin':
   'cmd-b': 'symbols-view:go-to-declaration'
