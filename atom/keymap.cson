@@ -85,12 +85,13 @@
 
 'atom-workspace':
   'ctrl-alt-cmd-i': 'settings:toggle-vcs-ignored'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-b': 'symbols-view:go-to-declaration'
 
 '.platform-darwin':
   'cmd-b': 'symbols-view:go-to-declaration'
   'cmd-k right': 'pane:split-right-moving-current-tab'
   'ctrl-n': 'tree-view:toggle-focus'
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
 
 '.tree-view':
   'n': 'tree-view:add-file'

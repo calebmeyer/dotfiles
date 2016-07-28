@@ -142,10 +142,10 @@
     maxRecentFiles: 10
   "outline-selection":
     outlineColor:
-      red: 61
-      green: 190
-      blue: 255
       alpha: 1
+      blue: 255
+      green: 190
+      red: 61
     outlineOpacity: 0.75
     outlineWidth: 2
   racer:

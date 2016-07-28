@@ -28,7 +28,7 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
 
   " Hit Ctrl+p to open files, similar to sublime/atom/textmate
-  Plugin 'kien/ctrlp.vim'
+  Plugin 'ctrlpvim/ctrlp.vim'
 
   " Colorful statusline that shows buffers along the top
   Plugin 'bling/vim-airline'

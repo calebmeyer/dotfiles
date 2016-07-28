@@ -12,9 +12,8 @@
 [core]
 	autocrlf = input
 	editor = mvim -f
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [credential]
-	helper = osxkeychain
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
