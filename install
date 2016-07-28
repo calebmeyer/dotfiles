@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 # Bootstrap script for installing dotfiles.
+# Originally stolen from https://github.com/coderstephen/dotfiles
 
 # Set up configuration variables.
 set REPO (realpath (dirname (status -f)))
