@@ -1,4 +1,10 @@
 # dotfiles
-my personal dotfiles, managed by thoughtbot/rcm
+my personal dotfiles.
 
-Sets up git, zsh, antigen, emacs, vim, macvim, and a few more.
+Sets up git, fish, zsh, antigen, emacs, vim, macvim, and a few more.
+
+`sudo apt install fish`
+or
+`brew install fish`
+
+then ./install to get started.
