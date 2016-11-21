@@ -77,7 +77,6 @@ values."
                                       yaml-mode
                                       less-css-mode
                                       web-mode
-                                      origami
                                       (evil-remap :location (recipe :fetcher github :repo "GuiltyDolphin/evil-remap"))
                                       fireplace
                                      )
@@ -103,7 +102,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -150,7 +149,7 @@ values."
    ;; size to make separators look not too crappy.
    ;; Note: for whatever reason, this does not work on my mac
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 28
                                :weight normal
                                :width normal
                                :powerline-scale 1.5)
@@ -254,6 +253,9 @@ values."
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
    dotspacemacs-line-numbers t
+   ;; Code folding method. Possible values are `evil' and `origami'.
+   ;; (default 'evil)
+   dotspacemacs-folding-method 'origami
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -319,7 +321,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
                               ;; (set-fill-column 120)))
 
   ;; Add folding
-  (add-hook 'prog-mode-hook 'origami-mode)
   (evil-nnoremap "F" 'origami-recursively-toggle-node)
   (spacemacs/set-leader-keys "fo" 'origami-open-node)
   (spacemacs/set-leader-keys "fO" 'origami-open-all-nodes)
@@ -417,6 +418,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;; right
     '((battery)
       selection-info
+      projectile-root
       ((buffer-encoding-abbrev
         point-position
         line-column)
@@ -455,6 +457,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(exec-path-from-shell-check-startup-files nil)
  '(highlight-indentation-offset 2)
  '(ns-use-srgb-colorspace nil)
+ '(package-selected-packages
+   (quote
+    (origami sourcerer-theme helm-purpose window-purpose imenu-list zonokai-theme zenburn-theme zen-and-art-theme yapfify yaml-mode xterm-color web-mode web-beautify underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toml-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle shell-pop seti-theme rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme reveal-in-osx-finder rbenv ranger rainbow-mode rainbow-identifiers railscasts-theme racer pyvenv pytest pyenv-mode py-isort purple-haze-theme projectile-rails rake professional-theme planet-theme pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme pbcopy pastels-on-dark-theme osx-trash osx-dictionary orgit organic-green-theme org-projectile org-present org org-pomodoro alert log4e gntp org-download omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mwim mustang-theme multi-term monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minitest minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow magit-gh-pulls lush-theme livid-mode skewer-mode simple-httpd live-py-mode light-soap-theme less-css-mode launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jbeans-theme jazz-theme ir-black-theme insert-shebang inkpot-theme hy-mode htmlize heroku-theme hemisu-theme helm-pydoc helm-gitignore helm-company helm-c-yasnippet hc-zenburn-theme haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gist gh marshal logito pcache ht gh-md gandalf-theme flatui-theme flatland-theme fish-mode fireplace firebelly-theme feature-mode farmhouse-theme evil-snipe evil-remap evil-magit magit magit-popup git-commit with-editor espresso-theme eshell-z eshell-prompt-extras esh-help dracula-theme django-theme diff-hl darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme company-tern dash-functional tern company-statistics company-shell company-quickhelp pos-tip company-anaconda company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-identifiers-mode coffee-mode clues-theme clojure-snippets clj-refactor inflections edn multiple-cursors paredit peg cider-eval-sexp-fu cider seq queue clojure-mode chruby cherry-blossom-theme cargo rust-mode busybee-theme bundler inf-ruby bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme auto-yasnippet yasnippet apropospriate-theme anti-zenburn-theme anaconda-mode pythonic ample-zen-theme ample-theme alect-themes afternoon-theme ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(paradox-github-token t)
  '(require-final-newline (quote visit-save))
  '(ruby-align-to-stmt-keywords (quote (if unless def)))
@@ -467,7 +472,4 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil))))
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(font-lock-comment-face ((t (:foreground "#2aa1ae")))))
+ )

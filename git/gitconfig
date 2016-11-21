@@ -1,7 +1,3 @@
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
 [user]
 	name = Caleb Meyer
 	email = caleb.meyer@cerner.com
@@ -11,16 +7,10 @@
 	ui = auto
 [core]
 	autocrlf = input
-	editor = mvim -f
+	filemode = false
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+	helper = cache
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-[merge]
-	tool = bc3
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
 [fetch]
 	prune = true
