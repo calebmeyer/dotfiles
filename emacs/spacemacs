@@ -149,7 +149,7 @@ values."
    ;; size to make separators look not too crappy.
    ;; Note: for whatever reason, this does not work on my mac
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 28
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.5)
