@@ -4,7 +4,7 @@
 
 echo "Installing essentials from aptitude..."
 sudo apt install -y curl fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
-libmysqlclient-dev libsqlite3-dev
+libmysqlclient-dev libsqlite3-dev silversearcher-ag
 
 echo "Cloning dotfiles..."
 git clone https://github.com/calebmeyer/dotfiles.git ~/.dotfiles
