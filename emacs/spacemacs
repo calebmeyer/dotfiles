@@ -306,6 +306,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Evil related
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2)
+  (setq-default evil-escape-unordered-key-sequence t)
   ;; Per #5261, this may make indents correct when using the escape sequence (NOPE)
   ;; (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
   (require 'evil-remap)
@@ -355,7 +356,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; do splits properly (focus should go to new window)
   (spacemacs/set-leader-keys "w/" 'split-window-right-and-focus)
-  (spacemacs/set-leader-keys "w-" 'split-window-down-and-focus)
+  (spacemacs/set-leader-keys "w-" 'split-window-below-and-focus)
 
   ;; toggle word wrap (the way I think of it)
   (spacemacs/set-leader-keys "tw" 'toggle-truncate-lines)
