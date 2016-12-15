@@ -36,5 +36,6 @@ curl -L http://get.oh-my.fish | fish
 fish -c "omf install rbenv"
 fish -c "omf install pyenv"
 fish -c "omf install bobthefish"
+fish -c "omf install bang-bang"
 
 echo "Finished."
