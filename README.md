@@ -17,7 +17,7 @@ Note that you'll still need to run :PluginInstall in vim, run emacs once to
 allow spacemacs to install its packages, and `rbenv install` whatever ruby
 version you want.
 
-Also note that for a virtual box ubuntu VM, you may want to turn on dns from the host for VPN to work:
+Also note that for a virtual box VM, you may want to turn on dns from the host for VPN to work:
 ```
 PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 VBoxManage list vms
