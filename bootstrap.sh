@@ -28,6 +28,8 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 if ! echo $PATH | grep -q "rbenv"
 then
   echo 'export PATH=$HOME/.rbenv/bin:$PATH >> ~/.bashrc'
+  touch ~/.config/fish/config.fish
+  echo 'set PATH $PATH $HOME/.rbenv/bin >> ~/.config/fish/config.fish'
 fi
 
 echo "Installing pyenv"
