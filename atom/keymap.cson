@@ -24,17 +24,16 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 'atom-text-editor':
-  'ctrl-l': 'vim-mode:scroll-cursor-to-middle-leave'
+  'ctrl-l': 'vim-mode-plus:scroll-cursor-to-middle-leave'
 
+'atom-text-editor.vim-mode-plus.insert-mode:not(.mini)':
+  'j k': 'vim-mode-plus:activate-normal-mode'
 
-'atom-text-editor.vim-mode.insert-mode:not(.mini)':
-  'j k': 'vim-mode:activate-normal-mode'
-
-'atom-text-editor.vim-mode:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'space space': 'command-palette:toggle'
   'space c l': 'editor:toggle-line-comments'
 
-'atom-text-editor.vim-mode.normal-mode':
+'atom-text-editor.vim-mode-plus.normal-mode':
   # leader commands, by starting letter
   'space b b': 'fuzzy-finder:toggle-buffer-finder'
   'space b n': 'pane:show-next-item'
@@ -48,8 +47,11 @@
   'space f f': 'editor:toggle-current-row-folding'
   'space f s': 'core:save'
   'space f t': 'atom-spec-finder:toggle' # find test file (or go back from test to code)
-  'space g s': 'git-plus:status'
+  'space g s': 'atomatigit:toggle'
   'space g c j': 'git-plus:add-all-and-commit' # git commit jira on the command line
+  'space g p': 'git-plus:push-set-upstream'
+  'space g f': 'git-plus:pull'
+  'space g t': 'git-time-machine:toggle'
   'space j f': 'symbols-view:toggle-file-symbols' # jump to symbol in file
   'space j j': 'symbols-view:toggle-project_symbols' # jump to any symbol
   'space q a': 'tabs:close-all-tabs'
@@ -73,15 +75,17 @@
   ';': 'ex-mode:open' # shortcut for : (so you don't have to type shift)
   'K': 'editor:newline' # mirrors J in vim mode, since there's no help yet
   'F': 'editor:toggle-current-row-folding'
+  'Y': 'vim-mode-plus:yank-to-last-character-of-line'
 
-'atom-text-editor.vim-mode.normal-mode, .preview-pane, .item-views':
+'atom-text-editor.vim-mode-plus.normal-mode, .preview-pane, .item-views':
   'tab': 'pane:show-next-item'
   'shift-tab': 'pane:show-previous-item'
 
-'atom-text-editor.vim-mode.visual-mode':
+'atom-text-editor.vim-mode-plus.visual-mode':
   'v': 'expand-region:expand'
   'V': 'expand-region:shrink'
   '/': 'project-find:show'
+  'ctrl-shift-l': 'editor:split-selections-into-lines'
 
 'atom-workspace':
   'ctrl-alt-cmd-i': 'settings:toggle-vcs-ignored'
