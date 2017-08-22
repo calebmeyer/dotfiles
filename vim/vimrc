@@ -166,9 +166,9 @@ let g:rainbow_active = 1
 :nnoremap <Tab> :bnext<cr>
 :nnoremap <S-Tab> :bprevious<cr>
 
-" fold and unfold in normal mode with space. Fold in visual mode with space
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<cr>
-vnoremap <Space> zf
+" fold and unfold in normal mode with F. Fold in visual mode with F
+nnoremap <silent> F @=(foldlevel('.')?'za':"\<Space>")<cr>
+vnoremap F zf
 
 " ; works just as well as : for normal mode! Saves hitting shift all the time
 nnoremap ; :
@@ -187,7 +187,7 @@ endif
 let g:prosession_on_startup=1 " start with last session if exists
 let g:prosession_dir = '~/.vim_sessions'
 
-let mapleader = ","   " use comma as the leader character
+let mapleader = " "   " use space as the leader character
 
 " fugitive shortcuts
 noremap <leader>gs :Gstatus<cr>
@@ -197,6 +197,10 @@ noremap <leader>gl :Glog<cr>
 noremap <leader>gd :Gdiff<cr>
 noremap <leader>gb :Gblame<cr>
 noremap <leader>gp :Gpush<cr>
+
+" more shortcuts
+noremap <leader>fs :w<cr>
+noremap <leader>qq :q!<cr>
 
 " settings for rspec
 let g:rspec_runner = "os_x_iterm"
