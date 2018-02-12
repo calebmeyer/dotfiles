@@ -11,12 +11,14 @@ if grep -q Ubuntu /etc/os-release
    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - # gets a newer yarn
    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
    
+   curl -sL https://deb.nodesource.com/setup | sudo -E bash - # gets a newer node
+   
    echo "Getting the latest updates from aptitude..."
    sudo apt update
    echo "Installing essentials from aptitude..."
    sudo apt install -y fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
                        libmysqlclient-dev libsqlite3-dev silversearcher-ag libncurses5 libncurses5-dev libncursesw5 \
-                       tree yarn
+                       tree yarn nodejs
 fi
 
 if grep -q Fedora /etc/os-release
