@@ -5,6 +5,7 @@
 
 if grep -q Ubuntu /etc/os-release
    then
+   sudo apt-add-repository ppa:fish-shell/release-2 # gets a newer fish
    echo "Getting the latest updates from aptitude..."
    sudo apt update
    echo "Installing essentials from aptitude..."
