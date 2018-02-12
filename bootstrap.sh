@@ -6,13 +6,15 @@
 if grep -q Ubuntu /etc/os-release
    then
    sudo apt-add-repository ppa:fish-shell/release-2 # gets a newer fish
+   
+   sudo apt install -y curl
    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - # gets a newer yarn
    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
    
    echo "Getting the latest updates from aptitude..."
    sudo apt update
    echo "Installing essentials from aptitude..."
-   sudo apt install -y curl fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
+   sudo apt install -y fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
                        libmysqlclient-dev libsqlite3-dev silversearcher-ag libncurses5 libncurses5-dev libncursesw5 \
                        tree yarn
 fi
