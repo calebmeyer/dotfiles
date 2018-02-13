@@ -18,7 +18,7 @@ if grep -q Ubuntu /etc/os-release
    echo "Installing essentials from aptitude..."
    sudo apt install -y fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
                        libmysqlclient-dev libsqlite3-dev silversearcher-ag libncurses5 libncurses5-dev libncursesw5 \
-                       tree yarn nodejs
+                       tree yarn nodejs sqlite3
 fi
 
 if grep -q Fedora /etc/os-release
