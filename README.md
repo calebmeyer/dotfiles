@@ -23,3 +23,10 @@ PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 VBoxManage list vms
 VBoxManage modifyvm <uuid here> --natdnshostresolver1 on
 ```
+
+# For Fedora on Hyper-V
+The default resolution is tiny, so this sets it to 1080p
+```
+grubby --update-kernel=ALL --args="video=hyperv_fb:1920x1080"
+reboot
+```
