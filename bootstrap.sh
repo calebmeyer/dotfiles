@@ -36,8 +36,7 @@ echo "Cloning dotfiles..."
 git clone https://github.com/calebmeyer/dotfiles.git ~/.dotfiles
 
 echo "Cloning rbenv and rbenv install..."
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 if ! echo $PATH | grep -q "rbenv"
 then
   echo 'export PATH=$HOME/.rbenv/bin:$PATH >> ~/.bashrc'
