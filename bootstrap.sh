@@ -76,7 +76,8 @@ sudo usermod -s `which fish` $USER
 
 if ! fish -c "omf list" | grep -iq bobthefish
 then
-  fish -c "omf install rbenv pyenv bobthefish bang-bang"
+  mkdir -p ~/.pyenv/shims
+  fish -c "omf install pyenv bobthefish bang-bang"
 fi
 
 echo "Finished."
