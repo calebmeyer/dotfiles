@@ -65,18 +65,14 @@ echo "Installing Vundle..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "Setting up fish..."
-if [ ! -d ~/.config/omf ]
-then
-  curl -L http://get.oh-my.fish | fish
-fi
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 echo "Changing shell to fish..."
 sudo usermod -s `which fish` $USER
 
-if ! fish -c "omf list" | grep -iq bobthefish
+if ! fish -c "fisher ls" | grep -iq bobthefish
 then
-  mkdir -p ~/.pyenv/shims
-  fish -c "omf install pyenv bobthefish bang-bang"
+  fish -c "fisher omf/bobthefish omf/bang-bang pipenv fnm"
 fi
 
 echo "Finished."
