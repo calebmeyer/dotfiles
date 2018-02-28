@@ -11,7 +11,7 @@ if grep -q Ubuntu /etc/os-release
    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - # gets a newer yarn
    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
    
-   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - # gets a newer node
+   curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - # gets a newer node
    
    echo "Getting the latest updates from aptitude..."
    sudo apt update
