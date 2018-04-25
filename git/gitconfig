@@ -1,12 +1,12 @@
 [user]
 	name = Caleb Meyer
-	email = caleb.meyer@cerner.com
+	useConfigOnly = true
 [push]
 	default = current
 [color]
 	ui = auto
 [core]
-	autocrlf = input
+	autocrlf = true
 	filemode = false
 [credential]
 	helper = cache
