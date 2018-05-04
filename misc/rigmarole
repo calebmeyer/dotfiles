@@ -1,15 +1,26 @@
 username: cm022291
+password: # OPTIONAL, see below
 electric_commander:
   http_options:
     :verify: false
-  username: cm022291
+  password: # OPTIONAL, nice try
+  username: cm022291 # replace with your username
   url: https://commander.cerner.com:8443
 github:
   api_url: http://github.cerner.com/api/v3
+  username: cm022291 # replace with your username
+  password: # OPTIONAL, not giving you my password
+jenkins:
+  build_job: docker/job/docker-build-to-artifactory
+  url: https://jenkins.cerner.com/pophealth
   username: cm022291
+  password: # OPTIONAL, no way
 jira:
   username: cm022291
+  password: # OPTIONAL, still not doing it
 ucern:
   username: cm022291
+  password: # OPTIONAL, no not happening
 wiki:
   username: cm022291
+  password: # OPTIONAL, still not changed my mind

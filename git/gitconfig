@@ -6,7 +6,7 @@
 [color]
 	ui = auto
 [core]
-	autocrlf = true
+	autocrlf = input
 	filemode = false
 [credential]
 	helper = cache
