@@ -23,21 +23,21 @@
   'beforeEach':
     'prefix': 'bef'
     'body':'''
-      beforeEach(function() {
+      beforeEach(() => {
         $1
       });$2
     '''
   'describe':
     'prefix': 'desc'
     'body':'''
-      describe('${1:The thing described}', function() {
+      describe('${1:The thing described}', () => {
         ${2://body of the suite/context}
       });$3
     '''
   'it':
     'prefix': 'it'
     'body':'''
-      it('${1:The test description}', function() {
+      it('${1:The test description}', () => {
         ${2://body of the test}
       });$3
     '''
@@ -69,6 +69,40 @@
         $1
       end
     '''
+  'describe':
+    'prefix': 'desc'
+    'body': '''
+      describe '$1' do
+        $2
+      end$3
+    '''
+  'it':
+    'prefix': 'it'
+    'body': '''
+      it '$1' do
+        $2
+      end$3
+    '''
+  'let':
+    'prefix': 'let'
+    'body': '''
+      let(:$1) { $2 }$3
+    '''
+  'let params':
+    'prefix': 'letp'
+    'body': '''
+      let(:params) { { $1 } }$0
+    '''
+  'FactoryGirl.create_list':
+    'prefix': 'fgcl'
+    'body': '''
+      FactoryGirl.create_list(:${1:model_name}, ${2:2})$0
+    '''
+  'FactoryGirl.create':
+    'prefix': 'fgcr'
+    'body': '''
+      FactoryGirl.create(:${1:model_name})$0
+    '''
 '.source.python':
   'Interact':
     'prefix': 'interact'
@@ -76,3 +110,34 @@
   'Pry':
     'prefix': 'pry'
     'body': 'from IPython import embed; embed()'
+"*":
+  test:
+    prefix: "foo"
+    body: """
+    - CLIPBOARD: $CLIPBOARD
+    - TM_SELECTED_TEXT: $TM_SELECTED_TEXT
+    - TM_CURRENT_LINE: $TM_CURRENT_LINE
+    - TM_CURRENT_WORD: $TM_CURRENT_WORD
+    - TM_LINE_INDEX: $TM_LINE_INDEX
+    - TM_LINE_NUMBER: $TM_LINE_NUMBER
+    - TM_FILENAME: $TM_FILENAME
+    - TM_FILENAME_BASE: $TM_FILENAME_BASE
+    - TM_DIRECTORY: $TM_DIRECTORY
+    - TM_FILEPATH: $TM_FILEPATH
+
+    - CURRENT_YEAR: $CURRENT_YEAR
+    - CURRENT_YEAR_SHORT: $CURRENT_YEAR_SHORT
+    - CURRENT_MONTH: $CURRENT_MONTH
+    - CURRENT_MONTH_NAME: $CURRENT_MONTH_NAME
+    - CURRENT_MONTH_NAME_SHORT: $CURRENT_MONTH_NAME_SHORT
+    - CURRENT_DATE: $CURRENT_DATE
+    - CURRENT_DAY_NAME: $CURRENT_DAY_NAME
+    - CURRENT_DAY_NAME_SHORT: $CURRENT_DAY_NAME_SHORT
+    - CURRENT_HOUR: $CURRENT_HOUR
+    - CURRENT_MINUTE: $CURRENT_MINUTE
+    - CURRENT_SECOND: $CURRENT_SECOND
+
+    - BLOCK_COMMENT_START: $BLOCK_COMMENT_START
+    - BLOCK_COMMENT_END: $BLOCK_COMMENT_END
+    - LINE_COMMENT: $LINE_COMMENT
+    """

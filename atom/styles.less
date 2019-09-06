@@ -8,64 +8,181 @@
  * http://www.lesscss.org
  */
 
-.tree-view {
+@import "ui-variables";
+@import "syntax-variables";
 
-}
+@city-lights-base: #1d252c;
+// @base-background-color: @city-lights-base; // this makes the background of text editors a certain color
 
-// style the background and foreground colors on the atom-text-editor-element
-// itself
+@blueish: #00c4ff;
+@batman-yellow: #FDE311;
+@gold: #F5C504;
+@command-color: @gold;
+@insert-color: #0F4;
+@selection-color: #3AF;
+
 atom-text-editor {
+  background-color: @base-background-color;
+  .gutter {
+    background-color: darken(@base-background-color, 2%);
+
+    .line-number.git-line-modified {
+      border-left: 2px solid @blueish;
+    }
+  }
+
+  .indent-guide {
+    color: lighten(@base-background-color, 5%);
+  }
+
+  .multi-wrap-guide-line {
+    background-color: lighten(@base-background-color, 5%) !important;
+    margin-left: 0.7em !important;
+  }
 }
 
-atom-text-editor .gutter .line-number.git-line-modified,
-atom-text-editor::shadow .gutter .line-number.git-line-modified {
-  border-left: 2px solid #00c4ff;
+.tree-view {
+  .status-modified, .status-modified > * {
+    color: fadeOut(@blueish, 20%) !important;
+  }
+
+  // hide city lights' circles
+  .list-item:after, .list-item.file:before {
+    display: none !important;
+  }
 }
 
+.tab {
+  .status-modified, .status-modified > * {
+    color: @blueish !important;
+  }
 
-
-// To style other content in the text editor's shadow DOM, use the ::shadow
-// expression
-atom-text-editor::shadow .classname {
+  &:not(.active) .status-modified {
+    color: fade(@blueish, 50%) !important;
+  }
 }
-
-@cursor-color: #3AF;
-
-// Make I-beam cursor the color I want
-atom-text-editor.vim-mode-plus.insert-mode::shadow .cursor {
-  border-color: @cursor-color;
-}
-
-
-// Make block cursor more visible
-atom-text-editor.vim-mode-plus.normal-mode::shadow .cursor,
-atom-text-editor.vim-mode-plus.visual-mode::shadow .cursor,
-{
-  border: 1.5px solid @cursor-color !important;
-  border-radius: 3px;
-  box-shadow: 0 0 7px @cursor-color;
-  background: none !important;
-  opacity: 1 !important;
-}
-
-
-// Make selections more visible
-// atom-text-editor::shadow .selection .region {
-//   border: 1px solid rgb(97, 210, 255);
-//   background: rgba(70, 203, 255, .1) !important;
-//   box-shadow: 0 0 4px 0px rgb(75, 213, 255), 0 0 4px 0px rgb(75, 213, 255) inset;
-//   opacity: 1 !important;
-// }
 
 // Use blue for modified rather than orange.
-@blueish: #00c4ff;
-
-.status-modified, .status-modified > * {
-  color: fadeOut(@blueish, 20%) !important;
-}
-
 .minimap {
   .git-line-modified{
     background: fadeOut(@blueish, 50%);
   }
+}
+
+.line-highlight(@color) {
+  .cursor-line {
+    // box-shadow: 0 0 1px @color;
+    background-color: fadeOut(@color, 95%);
+  }
+}
+
+// Make I-beam cursor the color I want
+atom-text-editor.vim-mode-plus.insert-mode.editor {
+  .cursor {
+    border-color: @insert-color !important;
+    opacity: 1;
+  }
+
+  .line-highlight(@insert-color);
+}
+
+.block-cursor(@color) {
+  border: 1.5px solid @color !important;
+  border-radius: 3px;
+  box-shadow: 0 0 7px @color;
+  background: none !important;
+  opacity: 1 !important;
+}
+
+// Make block cursor more visible
+atom-text-editor.vim-mode-plus.normal-mode.editor {
+  &.is-focused {
+    .line-highlight(@command-color);
+    .cursor { .block-cursor(@command-color) }
+  }
+  .cursor { .block-cursor(darken(desaturate(@command-color, 20%), 20%)) }
+}
+atom-text-editor.vim-mode-plus.visual-mode.editor {
+  .cursor { .block-cursor(@selection-color) }
+}
+
+atom-text-editor .selection .region {
+  background-color: darken(desaturate(@selection-color, 50%), 40%);
+}
+// Make Vim states more visible
+.status-bar-vim-mode-plus-insert {
+  color: @insert-color;
+}
+.status-bar-vim-mode-plus-normal {
+  color: @command-color;
+}
+.status-bar-vim-mode-plus-visual {
+  color: @selection-color;
+}
+
+// terminal styles
+terminal-view {
+  .xterm {
+    font-family: 'Source Code Pro', Consolas, monospace;
+  }
+}
+
+// https://discuss.atom.io/t/crazy-3d-angled-tree-view/18765
+#atom-perspective() {
+  @viewing-distance: 12in;
+  @rotation: 20deg;
+
+  // .tree-view, .github-StubItem-git-tab-controller {
+  // Don't use this for views which aren't entirely read-only (like the git tab) since cursors don't render right.
+  .tree-view {
+    transform: translateY(-10vh) perspective(@viewing-distance) rotateY(@rotation);
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+    transform-origin: left;
+    width: 120%;
+    height: 120%;
+  }
+
+  body atom-text-editor-minimap {
+    transform: perspective(@viewing-distance) rotateY(-@rotation);
+    transform-origin: right;
+  }
+}
+
+// Comment or uncomment the next line to control whether the atom-perspective feature is enabled
+// #atom-perspective;
+
+#zen() {
+  // Zen coding, courtesy of @as-cii 🧘‍♂️💻
+  //
+  // Focus on your content and avoid visual noise. When you're viewing/editing a
+  // file, reduce the opacity of other Atom components, including the docks, the
+  // status bar, and inactive tabs. When you focus any of those components or
+  // hover over them, restore their full opacity.
+  atom-dock, status-bar, .tab-bar .tab, atom-text-editor, .termination.terminal-view {
+    opacity: 0.5;
+    transition: 0.2s;
+    &:hover, &:focus-within {
+      opacity: 1.0;
+    }
+  }
+  .tab-bar .tab.active, atom-text-editor.is-focused {
+    opacity: 1;
+  }
+}
+
+// comment or uncomment this to turn off zen
+// #zen;
+
+.termination.status-bar {
+  display: inline-flex;
+}
+
+// This was getting highligted red instead of following the syntax theme, and it was ruining the color palettes
+.syntax--source.syntax--ruby.syntax--embedded, .syntax--string.syntax--regexp.syntax--arbitrary-repitition {
+  color: inherit;
+}
+
+.terminal-view .dracula, .terminal-view .standard {
+  background-color: @base-background-color;
 }
