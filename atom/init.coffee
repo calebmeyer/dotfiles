@@ -33,6 +33,12 @@ atom.commands.add 'atom-text-editor',
     atom.commands.dispatch(target, 'golden-ratio:toggle')
     atom.commands.dispatch(target, 'editor:toggle-soft-wrap')
 
+  'custom:run-rspec-for-line': (event) ->
+    target = atom.views.getView(atom.workspace)
+    atom.commands.dispatch(target, 'termination:new')
+    atom.commands.dispatch(target, 'termination:insert-custom-text-1')
+
+
 atom.commands.add 'atom-workspace',
   'buffer:delete-buffer': ->
     atom.workspace.getActivePane().destroyActiveItem()

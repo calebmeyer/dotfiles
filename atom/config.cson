@@ -19,7 +19,6 @@
     fileBlacklist: [
       ".log"
     ]
-    includeCompletionsFromAllBuffers: true
   "autocomplete-ruby": {}
   autosave:
     enabled: true
@@ -44,6 +43,7 @@
       "git-blame"
       "terminal-tab"
       "hey-pane"
+      "inline-git-diff"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -51,6 +51,8 @@
       "rainglow"
     ]
     uriHandlerRegistration: "always"
+  docblockr:
+    align_tags: "shallow"
   "easy-motion": {}
   editor:
     fontFamily: "Hack"
@@ -103,6 +105,8 @@
       green: 213
       red: 54
   "highlight-line": {}
+  "inline-git-diff":
+    showInStatusBar: false
   "isotope-ui":
     backgroundColor: "false"
     backgroundImagePath: "/Users/cm022291/PIctures/rainy_night.png"
@@ -143,8 +147,7 @@
   "linter-jshint":
     jshintExecutablePath: "/usr/local/bin/jshint"
   "linter-rubocop": {}
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "merge-conflicts": {}
   minimap:
     disablePythonDocLinks: true
@@ -255,12 +258,12 @@
       "#c40708"
     ]
   "sync-settings":
-    _lastBackupHash: "924e9c2a05ea99d5fc7e58b750d3526bfaed4978"
+    _lastBackupHash: "e9b8798ecc459c4e2bde8f8fd052c006a4e32b64"
     blacklistedKeys: [
       "gist-it.userToken"
     ]
     gistId: "57593e1d220fef2910e3d881852a04b3"
-    personalAccessToken: "d095f30d7b0115530453f62f1b119e68146693e7"
+    personalAccessToken: "ae6900cf3ad632c577492d066402d574be9cb5ec"
     quietUpdateCheck: true
   tabs:
     enableVcsColoring: true
@@ -281,7 +284,11 @@
   termination:
     core:
       scrollback: 10000
+    customTexts:
+      customText1: "rr $D/$F:$L"
     style:
+      animationSpeed: 5
+      defaultPanelHeight: "25%"
       theme: "dracula"
     toggles:
       cloneTerminalPlus: false
@@ -327,6 +334,9 @@
   editor:
     preferredLineLength: 120
     softWrapHangingIndent: 4
+".fish.source":
+  editor:
+    preferredLineLength: 120
 ".gfm.source":
   editor:
     preferredLineLength: 120
@@ -366,6 +376,11 @@
   editor:
     preferredLineLength: 120
     softWrapHangingIndent: 4
+  "wrap-guide":
+    columns: [
+      80
+      120
+    ]
 ".source.yaml":
   editor:
     preferredLineLength: 120

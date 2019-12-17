@@ -83,6 +83,16 @@
         $2
       end$3
     '''
+  'it renders a template':
+    'prefix': 'itr'
+    'body': '''
+      it { is_expected.to render_template ${1::show} }$0
+    '''
+  'it has an http status':
+    'prefix': 'ith'
+    'body': '''
+      it { is_expected.to have_http_status ${1::ok} }$0
+    '''
   'let':
     'prefix': 'let'
     'body': '''
@@ -93,15 +103,15 @@
     'body': '''
       let(:params) { { $1 } }$0
     '''
-  'FactoryGirl.create_list':
-    'prefix': 'fgcl'
+  'FactoryBot.create_list':
+    'prefix': 'fbcl'
     'body': '''
-      FactoryGirl.create_list(:${1:model_name}, ${2:2})$0
+      FactoryBot.create_list(:${1:model_name}, ${2:2})$0
     '''
-  'FactoryGirl.create':
-    'prefix': 'fgcr'
+  'FactoryBot.create':
+    'prefix': 'fbcr'
     'body': '''
-      FactoryGirl.create(:${1:model_name})$0
+      FactoryBot.create(:${1:model_name})$0
     '''
 '.source.python':
   'Interact':
