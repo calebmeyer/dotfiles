@@ -5,7 +5,7 @@
 
 if grep -q Ubuntu /etc/os-release
    then
-   sudo apt-add-repository ppa:fish-shell/release-2 # gets a newer fish
+   sudo apt-add-repository ppa:fish-shell/release-3 # gets a newer fish
    
    sudo apt install -y curl
    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - # gets a newer yarn
