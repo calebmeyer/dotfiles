@@ -8,8 +8,6 @@ if grep -q Ubuntu /etc/os-release
    sudo apt-add-repository ppa:fish-shell/release-3 # gets a newer fish
    
    sudo apt install -y curl
-   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - # gets a newer yarn
-   echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
    
    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - # gets a newer node
    
