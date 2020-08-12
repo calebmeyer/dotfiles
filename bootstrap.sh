@@ -17,7 +17,7 @@ if grep -q Ubuntu /etc/os-release
    sudo apt update
    echo "Installing essentials from aptitude..."
    sudo apt install -y fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
-                       libmysqlclient-dev libsqlite3-dev silversearcher-ag libncurses5 libncurses5-dev libncursesw5 \
+                       libmysqlclient-dev libsqlite3-dev ripgrep libncurses5 libncurses5-dev libncursesw5 \
                        tree yarn nodejs sqlite3
 fi
 
@@ -29,7 +29,7 @@ if grep -q Fedora /etc/os-release
    echo "Installing essentials from dandified yum (dnf)..."
    sudo dnf install -y curl fish zsh emacs vim git-core gcc gcc-c++ zlib zlib-devel readline readline-devel     \
                        libyaml-devel libffi-devel openssl-devel make autoconf automake sqlite-devel mysql-devel \
-                       tree yarn
+                       tree yarn ripgrep
 fi
 
 echo "Cloning dotfiles..."
