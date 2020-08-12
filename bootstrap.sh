@@ -72,7 +72,7 @@ sudo usermod -s `which fish` $USER
 
 if ! fish -c "fisher ls" | grep -iq bobthefish
 then
-  fish -c "fisher omf/bobthefish omf/bang-bang pipenv fnm"
+  fish -c "fisher add omf/bobthefish omf/bang-bang pipenv fnm"
 fi
 
 echo "Finished."
