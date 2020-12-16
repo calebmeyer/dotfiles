@@ -1,6 +1,7 @@
 [user]
 	name = Caleb Meyer
 	useConfigOnly = true
+	email = caleb.meyer@cerner.com
 [push]
 	default = current
 [color]

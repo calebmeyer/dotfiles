@@ -1,60 +1,87 @@
 #!/bin/sh
-# This file bootstraps a Ubuntu (16.04+) or Fedora (25+) system with my dotfiles
+# This file bootstraps a Ubuntu (16.04+) or Fedora (25+) or macOS
+# system with my dotfiles
 # and a few programs I find essential.
 # It's meant to be run once on a brand new system.
 
-if grep -q Ubuntu /etc/os-release
-   then
-   sudo apt-add-repository ppa:fish-shell/release-3 # gets a newer fish
-   
-   sudo apt install -y curl
-   
-   curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - # gets a newer node
-   
-   echo "Getting the latest updates from aptitude..."
-   sudo apt update
-   echo "Installing essentials from aptitude..."
-   sudo apt install -y fish zsh emacs vim build-essential git tree rbenv libssl-dev libreadline-dev zlib1g-dev \
-                       libmysqlclient-dev libsqlite3-dev ripgrep libncurses5 libncurses5-dev libncursesw5 \
-                       tree yarn nodejs sqlite3
-fi
+# Detect the platform (similar to $OSTYPE)
+OS="`uname`"
+case $OS in
+  'Linux')
+    OS='Linux'
+    ;;
+  'FreeBSD')
+    OS='FreeBSD'
+    ;;
+  'WindowsNT')
+    OS='Windows'
+    ;;
+  'Darwin')
+    OS='Mac'
+    ;;
+  'SunOS')
+    OS='Solaris'
+    ;;
+  'AIX') ;;
+  *) ;;
+esac
 
-if grep -q Fedora /etc/os-release
-   then
-   sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo # gets a newer yarn
-   echo "Getting the latest updates from dandified yum (dnf)..."
-   sudo dnf update
-   echo "Installing essentials from dandified yum (dnf)..."
-   sudo dnf install -y curl fish zsh emacs vim git-core gcc gcc-c++ zlib zlib-devel readline readline-devel     \
-                       libyaml-devel libffi-devel openssl-devel make autoconf automake sqlite-devel mysql-devel \
-                       tree yarn ripgrep
+echo "Detected OS as $OS"
+
+if ["$OS" == "Mac"]
+then
+  echo "Installing homebrew"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  echo "Installing essentials from brew"
+  brew tap homebrew/cask-fonts
+  brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro font-hack \
+               iterm2 firefox keepingyouawake bettertouchtool alfred
+elif ["$OS" == "Linux"]
+then
+  if grep -q Ubuntu /etc/os-release
+  then
+    sudo apt-add-repository ppa:fish-shell/release-3 # gets a newer fish
+
+    sudo apt install -y curl
+
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - # gets a newer node
+
+    echo "Getting the latest updates from aptitude..."
+    sudo apt update
+    echo "Installing essentials from aptitude..."
+    sudo apt install -y fish zsh emacs vim build-essential git tree libssl-dev libreadline-dev zlib1g-dev \
+                       libmysqlclient-dev libsqlite3-dev ripgrep libncurses5 libncurses5-dev libncursesw5 \
+                       yarn nodejs sqlite3 exa bat fonts-hack-ttf
+  fi
+
+  if grep -q Fedora /etc/os-release
+  then
+    sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo # gets a newer yarn
+    echo "Getting the latest updates from dandified yum (dnf)..."
+    sudo dnf update
+    echo "Installing essentials from dandified yum (dnf)..."
+    sudo dnf install -y curl fish zsh emacs vim git-core gcc gcc-c++ zlib zlib-devel readline readline-devel     \
+                         libyaml-devel libffi-devel openssl-devel make autoconf automake sqlite-devel mysql-devel \
+                         tree yarn ripgrep exa bat adobe-source-code-pro-fonts
+  fi
+else
+  echo "Unsupported OS: $OS"
 fi
 
 echo "Cloning dotfiles..."
 git clone https://github.com/calebmeyer/dotfiles.git ~/.dotfiles
 
-echo "Cloning rbenv and rbenv install..."
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
-if ! echo $PATH | grep -q "rbenv"
-then
-  echo 'export PATH=$HOME/.rbenv/bin:$PATH >> ~/.bashrc'
-  touch ~/.config/fish/config.fish
-  echo 'set PATH $PATH $HOME/.rbenv/bin >> ~/.config/fish/config.fish'
-fi
-
-echo "Installing pyenv"
-curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-
 echo "Setting up dotfiles..."
 sudo chmod +x ~/.dotfiles/install
 fish ~/.dotfiles/install
 
-if ! fc-list | grep -iq "Source Code Pro"
-then
-  echo "Installing source code pro..."
-  sudo chmod +x ~/.dotfiles/install_source_code_pro.sh
-  sh ~/.dotfiles/install_source_code_pro.sh
-fi
+echo "Setting up the asdf version manager"
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+
+echo "source ~/.asdf/asdf.fish" >> ~/.config/fish/config.fish
 
 echo "Installing Spacemacs..."
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
