@@ -94,7 +94,7 @@ echo "Setting up fish..."
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 echo "Changing shell to fish..."
-sudo usermod -s `which fish` $USER
+sudo chsh -s `which fish`
 
 if ! fish -c "fisher ls" | grep -iq bobthefish
 then
