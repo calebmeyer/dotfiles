@@ -28,8 +28,6 @@ esac
 
 echo "Detected OS as $OS"
 
-set -e
-
 if [ "$OS" == "Mac" ]
 then
   echo "Installing homebrew"
