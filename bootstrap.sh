@@ -100,5 +100,7 @@ if ! fish -c "fisher ls" | grep -iq bobthefish
 then
   fish -c "fisher add oh-my-fish/theme-bobthefish oh-my-fish/plugin-bang-bang"
 fi
+fish -c "alias ls exa"
+fish -c "alias cat bat"
 
 echo "Finished."
