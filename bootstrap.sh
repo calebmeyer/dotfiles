@@ -82,6 +82,7 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 
 echo "source ~/.asdf/asdf.fish" >> ~/.config/fish/config.fish
+mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 
 echo "Installing Spacemacs..."
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
