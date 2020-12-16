@@ -28,7 +28,9 @@ esac
 
 echo "Detected OS as $OS"
 
-if ["$OS" == "Mac"]
+set -e
+
+if [ "$OS" == "Mac" ]
 then
   echo "Installing homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -37,7 +39,7 @@ then
   brew tap homebrew/cask-fonts
   brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro font-hack \
                iterm2 firefox keepingyouawake bettertouchtool alfred
-elif ["$OS" == "Linux"]
+elif [ "$OS" == "Linux" ]
 then
   if grep -q Ubuntu /etc/os-release
   then
