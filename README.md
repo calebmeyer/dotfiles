@@ -8,7 +8,7 @@ Sets up git, fish, zsh, antigen, emacs, vim, macvim, and a few more.
 then ./install to get started.
 
 # Bootstrapping
-For Ubuntu (16.04 or later) or Fedora (25+) you can instead run bootstrap.sh, which installs a
+For Ubuntu (16.04 or later) or Fedora (25+) or macOS you can instead run bootstrap.sh, which installs a
 lot of prerequisites, then installs the dotfiles.
 
 `curl -s https://raw.githubusercontent.com/calebmeyer/dotfiles/master/bootstrap.sh | bash`
