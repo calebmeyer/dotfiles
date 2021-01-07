@@ -38,3 +38,14 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^r' history-incremental-search-backward
 
 if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi
+
+rr() {
+  if [-f ./spec/basic_formatter.rb]; then
+    bundle exec rspec spec -f BasicFormatter $@
+  else
+    bundle exec rspec spec $@
+  end
+}
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
