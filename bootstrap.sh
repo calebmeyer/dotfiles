@@ -35,7 +35,7 @@ then
 
   echo "Installing essentials from brew"
   brew tap homebrew/cask-fonts
-  brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro font-hack \
+  brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro procs \
                iterm2 firefox keepingyouawake bettertouchtool alfred
 elif [ "$OS" == "Linux" ]
 then
