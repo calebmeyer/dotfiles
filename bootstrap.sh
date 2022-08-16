@@ -36,7 +36,7 @@ then
   echo "Installing essentials from brew"
   brew tap homebrew/cask-fonts
   brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro procs \
-               iterm2 firefox bettertouchtool alfred
+               iterm2 firefox bettertouchtool alfred font-hack-nerd-font
   # fix press and hold a key to do the right thing (repeat) instead of the wrong thing (bring up a list of accented characters)
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 elif [ "$OS" == "Linux" ]
