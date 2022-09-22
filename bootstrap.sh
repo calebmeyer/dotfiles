@@ -30,6 +30,9 @@ echo "Detected OS as $OS"
 
 if [ "$OS" == "Mac" ]
 then
+  echo "Fixing Key Repeat to work correctly (repeat keys instead of accented characters)"
+  defaults write -g ApplePressAndHoldEnabled -bool false
+  
   echo "Installing homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
