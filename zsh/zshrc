@@ -49,3 +49,4 @@ rr() {
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
