@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # This file will be loaded for interactive shells. For commands which are not specific to interactive shells,
 # use .zshenv instead.
 
@@ -24,11 +31,8 @@ source ~/.dotfiles/binaries/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle rimraf/k
 
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen theme calebmeyer/cpm-zsh-theme cpm
 
 antigen apply
 
@@ -39,14 +43,7 @@ bindkey '^r' history-incremental-search-backward
 
 if [ -f ~/.aliases.zsh ]; then source ~/.aliases.zsh; fi
 
-rr() {
-  if [-f ./spec/basic_formatter.rb]; then
-    bundle exec rspec spec -f BasicFormatter $@
-  else
-    bundle exec rspec spec $@
-  end
-}
-
-# added by Snowflake SnowSQL installer v1.2
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
