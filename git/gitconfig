@@ -1,7 +1,8 @@
 [user]
 	name = Caleb Meyer
 	useConfigOnly = true
-	email = Caleb.Meyer@Hy-Vee.com
+	email = caleb.meyer@hy-vee.com
+	signingkey = 90822E2EBFE8BD3DF90FD71299B939BD9A75DD40
 [push]
 	default = current
 [color]
@@ -24,3 +25,7 @@
 	required = true
 [pull]
 	ff = only
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgSign = true
