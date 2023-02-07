@@ -39,9 +39,14 @@ then
   echo "Installing essentials from brew"
   brew tap homebrew/cask-fonts
   brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro procs \
-               iterm2 firefox bettertouchtool alfred font-hack-nerd-font
+               iterm2 firefox bettertouchtool alfred font-hack-nerd-font duti python-yq
   # fix press and hold a key to do the right thing (repeat) instead of the wrong thing (bring up a list of accented characters)
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  
+  # set VS Code as default editor for all file types github recognizes
+  curl "https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml" \
+      | yq -r "to_entries | (map(.value.extensions) | flatten) - [null] | unique | .[]" \
+      | xargs -L 1 -I "{}" duti -s com.microsoft.VSCode {} all
 elif [ "$OS" == "Linux" ]
 then
   if grep -q Ubuntu /etc/os-release
