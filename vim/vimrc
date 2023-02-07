@@ -70,6 +70,12 @@ call vundle#begin()
 
   " Filetype icons
   Plugin 'ryanoasis/vim-devicons'
+
+  " Fish support
+  Plugin 'dag/vim-fish'
+
+  " Tom's Obvious Minimal Language support
+  Plugin 'cespare/vim-toml'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
