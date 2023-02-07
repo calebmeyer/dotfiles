@@ -1,10 +1,15 @@
-set -x DOCKER_HOST 'tcp://0.0.0.0:2375'
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    alias cat bat
+    alias ps procs
+    alias ls exa
+    alias dotnet6 /usr/local/opt/dotnet@6/bin/dotnet
 
-# Load pyenv
-set -x PATH "/home/caleb/.pyenv/bin" $PATH
-status --is-interactive; and . (pyenv init -|psub)
-status --is-interactive; and . (pyenv virtualenv-init -|psub)
+    # Don't run HUSKY, I don't want it
+    set -x HUSKY 0
 
-# Load rbenv
-set -x PATH "/home/caleb/.rbenv/bin" $PATH
-status --is-interactive; and . (rbenv init -|psub)
+    atuin init fish | source
+end
+
+# Don't use interactive for asdf, so it will work in scripts
+source ~/.asdf/asdf.fish
