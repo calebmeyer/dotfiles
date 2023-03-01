@@ -3,13 +3,13 @@ if status is-interactive
     alias cat bat
     alias ps procs
     alias ls exa
-    alias dotnet6 /usr/local/opt/dotnet@6/bin/dotnet
+    alias tmux zellij
 
-    # Don't run HUSKY, I don't want it
-    set -x HUSKY 0
-
+    set -gx ATUIN_NOBIND "true"
     atuin init fish | source
+
+    bind \cr _atuin_search
 end
 
-# Don't use interactive for asdf, so it will work in scripts
-source ~/.asdf/asdf.fish
+# Don't use interactive for rtx, so it will work in scripts
+/usr/local/bin/rtx activate fish | source
