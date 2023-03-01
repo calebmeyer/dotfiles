@@ -6,88 +6,76 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
-" Keep Plugin commands between vundle#begin/end.
-call vundle#begin()
-  " let Vundle manage Vundle, required
-  Plugin 'gmarik/Vundle.vim'
+" Keep Plug commands between begin/end
+call plug#begin()
+  Plug 'gmarik/Vundle.vim'
 
-
-  " Git plugins
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'airblade/vim-gitgutter'
+  " Git Plugins
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 
   " Rails dev
-  Plugin 'tpope/vim-haml'
-  Plugin 'groenewege/vim-less'
-  Plugin 'tpope/vim-rails'
-  Plugin 'plasticboy/vim-markdown'
-  Plugin 'bruno-/vim-ruby-fold'
-  Plugin 'thoughtbot/vim-rspec'
+  Plug 'tpope/vim-haml'
+  Plug 'groenewege/vim-less'
+  Plug 'tpope/vim-rails'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'bruno-/vim-ruby-fold'
+  Plug 'thoughtbot/vim-rspec'
 
   " File browser as a sidebar
-  Plugin 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree'
 
   " Hit Ctrl+p to open files, similar to sublime/atom/textmate
-  Plugin 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
 
   " Colorful statusline that shows buffers along the top
-  Plugin 'bling/vim-airline'
+  Plug 'bling/vim-airline'
 
   " Syntax highlighting for gui vim (macvim)
-  Plugin 'gosukiwi/vim-atom-dark'
-  Plugin 'flazz/vim-colorschemes'
+  Plug 'gosukiwi/vim-atom-dark'
+  Plug 'flazz/vim-colorschemes'
   " and console vim
-  Plugin 'andrwb/vim-lapis256'
+  Plug 'andrwb/vim-lapis256'
 
   " :Tab /<character to align>
-  Plugin 'godlygeek/tabular'
+  Plug 'godlygeek/tabular'
 
   " Adds a new adjective "s" for surrounding, e.g. cs"' will change from
   " double quotes to single quotes
-  Plugin 'tpope/vim-surround'
+  Plug 'tpope/vim-surround'
 
   " golang development
-  Plugin 'fatih/vim-go'
+  Plug 'fatih/vim-go'
 
   " highlights trailing whitespace
-  Plugin 'ntpeters/vim-better-whitespace'
+  Plug 'ntpeters/vim-better-whitespace'
 
   " fixes pasting to not successively indent further
-  Plugin 'ConradIrwin/vim-bracketed-paste'
+  Plug 'ConradIrwin/vim-bracketed-paste'
 
   " Session management
-  Plugin 'tpope/vim-obsession'
-  Plugin 'dhruvasagar/vim-prosession'
+  Plug 'tpope/vim-obsession'
+  Plug 'dhruvasagar/vim-prosession'
 
   " Block cursor on the command line!
-  Plugin 'sjl/vitality.vim'
+  Plug 'sjl/vitality.vim'
 
   " <leader> c to comment or uncomment the current line/selection
-  Plugin 'scrooloose/nerdcommenter'
+  Plug 'scrooloose/nerdcommenter'
 
   " Rainbow parentheses
-  Plugin 'luochen1990/rainbow'
+  Plug 'luochen1990/rainbow'
 
   " Filetype icons
-  Plugin 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons'
 
   " Fish support
-  Plugin 'dag/vim-fish'
+  Plug 'dag/vim-fish'
 
   " Tom's Obvious Minimal Language support
-  Plugin 'cespare/vim-toml'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+  Plug 'cespare/vim-toml'
+" All of your Plugs must be added before the following line
+call plug#end()
 
 " Line numbers
 set number
