@@ -39,7 +39,8 @@ then
   echo "Installing essentials from brew"
   brew tap homebrew/cask-fonts
   brew install fish emacs neovim git tree ripgrep exa bat mysql wget font-hack font-source-code-pro procs \
-               iterm2 firefox bettertouchtool alfred4 font-hack-nerd-font duti python-yq zellij mprocs jdxcode/tap/rtx
+               iterm2 firefox bettertouchtool alfred4 font-hack-nerd-font duti python-yq zellij mprocs \
+               jdxcode/tap/rtx atuin
   # fix press and hold a key to do the right thing (repeat) instead of the wrong thing (bring up a list of accented characters)
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
   
@@ -62,7 +63,7 @@ then
     echo "Installing essentials from aptitude..."
     sudo apt install -y fish zsh emacs vim build-essential git tree libssl-dev libreadline-dev zlib1g-dev \
                        libmysqlclient-dev libsqlite3-dev ripgrep libncurses5 libncurses5-dev libncursesw5 \
-                       yarn nodejs sqlite3 exa bat fonts-hack-ttf rtx procs zellij
+                       yarn nodejs sqlite3 exa bat fonts-hack-ttf rtx procs zellij atuin
   fi
 
   if grep -q Fedora /etc/os-release
@@ -77,7 +78,7 @@ then
     echo "Installing essentials from dandified yum (dnf)..."
     sudo dnf install -y curl fish zsh emacs vim git-core gcc gcc-c++ zlib zlib-devel readline readline-devel      \
                          libyaml-devel libffi-devel openssl-devel make autoconf automake sqlite-devel mysql-devel \
-                         tree yarn ripgrep exa bat adobe-source-code-pro-fonts rtx procs zellij
+                         tree yarn ripgrep exa bat adobe-source-code-pro-fonts rtx procs zellij atuin
   fi
 else
   echo "Unsupported OS: $OS"
@@ -103,9 +104,5 @@ if ! fish -c "fisher ls" | grep -iq bobthefish
 then
   fish -c "fisher install oh-my-fish/theme-bobthefish oh-my-fish/plugin-bang-bang"
 fi
-fish -c "alias ls exa"
-fish -c "alias cat bat"
-fish -c "alias ps procs"
-fish -c "alias tmux zellij"
 
 echo "Finished."
