@@ -103,7 +103,7 @@ sudo chsh -s `which fish`
 
 if ! fish -c "fisher ls" | grep -iq bobthefish
 then
-  fish -c "fisher install oh-my-fish/theme-bobthefish oh-my-fish/plugin-bang-bang"
+  fish -c "fisher install oh-my-fish/theme-bobthefish oh-my-fish/plugin-bang-bang jethrokuan/z"
 fi
 
 echo "Finished."
