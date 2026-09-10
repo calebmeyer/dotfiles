@@ -1,3 +1,5 @@
+set -gx PATH $HOME/.asdf/shims $PATH
+
 if status is-interactive
     # plugin for bang bang support
 	function last_history_item; echo $history[1]; end

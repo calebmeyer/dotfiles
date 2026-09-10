@@ -7,5 +7,5 @@ function set_dotnet_env
 
     set -gx MSBuildSDKsPath $DOTNET_BASE/Sdks/
 
-    set -gx NUGET_API_KEY (pass show nuget_api_key)
+    set -gx NUGET_API_KEY (pass show nuget)
 end
