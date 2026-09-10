@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/h1532660/.docker/bin"
+# End of Docker Desktop section.
+
 set -gx PATH $HOME/.asdf/shims $PATH
 
 if status is-interactive

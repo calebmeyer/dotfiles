@@ -1,0 +1,12 @@
+# Override direnv stdlib's semver_search to follow symlinks (-L),
+# so a single symlink bridging a non-standard nvm install (e.g. nvm.fish's
+# ~/.local/share/nvm) into ~/.nvm/versions/node works for future versions too.
+semver_search() {
+  local version_dir=${1:-}
+  local prefix=${2:-}
+  local partial_version=${3:-}
+  find -L "$version_dir" -maxdepth 1 -mindepth 1 -type d -name "${prefix}${partial_version}*" |
+    while IFS= read -r line; do echo "${line#"${version_dir%/}"/"${prefix}"}"; done |
+    sort -t . -k 1,1rn -k 2,2rn -k 3,3rn |
+    head -1
+}

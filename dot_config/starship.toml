@@ -21,7 +21,7 @@ $kotlin\
 $haskell\
 $python\
 [](fg:green bg:sapphire)\
-$conda\
+$ruby\
 [](fg:sapphire bg:lavender)\
 $time\
 [ ](fg:lavender)\
@@ -141,11 +141,11 @@ symbol = ""
 style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
-[conda]
-symbol = "  "
+[ruby]
+symbol = ""
 style = "fg:crust bg:sapphire"
-format = '[$symbol$environment ]($style)'
-ignore_base = false
+format = '[$symbol( $version) ]($style)'
+detect_variables = []
 
 [time]
 disabled = false
