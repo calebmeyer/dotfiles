@@ -145,7 +145,7 @@ format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 [ruby]
 symbol = ""
 style = "fg:crust bg:sapphire"
-format = '[$symbol( $version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 detect_variables = []
 
 [time]
